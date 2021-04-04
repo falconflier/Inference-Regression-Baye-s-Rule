@@ -165,7 +165,7 @@ def sampler(dim, num_steps, beta):
 def dim_plot(dimension, beta=0.3, generate_images=True):
     # Beta is inversely proportional to the width of the spread. Large beta implies thin gaussians; small beta implies
     # lots of variance
-    steps = power(5)
+    steps = power(6)
     path, rate = sampler(dimension, steps, beta)
     if generate_images:
         title = str(dimension) + "-dimensions, " + str(steps) + " steps, beta = " + str(beta) + ", acceptance rate = " + str(rate)
@@ -239,18 +239,31 @@ def get_upper_bound(lower_bound):
 
 
 # Gets trace plots for many dimensions
-def many_dims():
-    for i in range(1, 6):
-        dim_plot(i)
-    for i in np.arange(70, 101, 10):
-        dim_plot(i)
+def many_dims(adjusts=False):
+    # If we want to use a beta that varies based on dimension
+    if adjusts:
+        for i in range(1, 6):
+            dim_plot(i, beta=beta_dependence(i))
+        for i in np.arange(70, 101, 10):
+            dim_plot(i, beta=beta_dependence(i))
+    # If we want to use a beta that
+    else:
+        for i in range(1, 6):
+            dim_plot(i)
+        for i in np.arange(70, 101, 10):
+            dim_plot(i)
+
+
+# Encodes the dimensionality dependence of beta, beta -> beta(dim). Found empirically
+def beta_dependence(dim):
+    return 0.037858 * dim + 0.353123
 
 
 if __name__ == "__main__":
     # dim_plot(70, beta=3.0032)
-    # many_dims()
-    low_bound = get_low_bound(start=8, stop=30)
-    upper_bound = get_upper_bound(low_bound)
+    many_dims()
+    # low_bound = get_low_bound(start=8, stop=30)
+    # upper_bound = get_upper_bound(low_bound)
     # upper_bound = get_upper_bound(np.array([[8, 0.1], [-100, 0.2], [-100, 0.3], [-100, 0.4], [12, 0.5]]))
     # for i in range(8, 21):
     #     print("for dimension " + str(i) + " lower bound on beta is " + str(low_bound[i, 1]) + " and upper bound is " + str(upper_bound[i, 1]) + " acceptance rates of " + str(low_bound[i, 2]) + " and " + str(upper_bound[i, 2]))
