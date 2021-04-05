@@ -39,11 +39,16 @@ def prop_step(old_pos, beta):
     assert isinstance(beta, (int, np.integer, float, np.floating))
     assert beta > 0
     # finding the standard deviation so I can plug it directly into the builtin function random provides
-    sigma = 1 / (2 * beta)
-    new_pos = np.zeros([len(old_pos)])
-    for i, element in enumerate(old_pos):
-        new_pos[i] = element + np.random.normal(scale=sigma)
-    return new_pos
+    # new_pos = np.zeros([len(old_pos)])
+
+    # I don't get this... but I was told to do it in the documentation given here:
+    # https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html
+    inc = beta * np.random.randn(len(old_pos))
+    return old_pos + inc
+    # sigma = 1 / (2 * beta)
+    # for i, element in enumerate(old_pos):
+    #     new_pos[i] = element + np.random.normal(scale=sigma)
+    # return new_pos
 
 
 # Creates a histogram out of the data
@@ -260,8 +265,6 @@ def beta_dependence(dim):
 
 
 if __name__ == "__main__":
-    # dim_plot(70, beta=3.0032)
-    many_dims(adjusts=True)
-    # low_bound = get_low_bound(start=8, stop=30)
-    # upper_bound = get_upper_bound(low_bound)
-    # upper_bound = get_upper_bound(np.array([[8, 0.1], [-100, 0.2], [-100, 0.3], [-100, 0.4], [12, 0.5]]))
+    many_dims(adjusts=False)
+    low_bound = get_low_bound(start=8, stop=30)
+    upper_bound = get_upper_bound(low_bound)
