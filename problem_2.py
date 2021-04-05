@@ -61,7 +61,7 @@ def histogram(data, title=None, save=None):
     delta = stop - start
     lin = np.linspace(start, stop)
     axs.plot(lin, (delta * len(data) / n_bins) * roe(lin))
-    if isinstance(save, str):
+    if isinstance(title, str):
         plt.title(title)
     if save:
         plt.savefig(save + " histogram")
@@ -261,9 +261,7 @@ def beta_dependence(dim):
 
 if __name__ == "__main__":
     # dim_plot(70, beta=3.0032)
-    many_dims()
+    many_dims(adjusts=True)
     # low_bound = get_low_bound(start=8, stop=30)
     # upper_bound = get_upper_bound(low_bound)
     # upper_bound = get_upper_bound(np.array([[8, 0.1], [-100, 0.2], [-100, 0.3], [-100, 0.4], [12, 0.5]]))
-    # for i in range(8, 21):
-    #     print("for dimension " + str(i) + " lower bound on beta is " + str(low_bound[i, 1]) + " and upper bound is " + str(upper_bound[i, 1]) + " acceptance rates of " + str(low_bound[i, 2]) + " and " + str(upper_bound[i, 2]))
