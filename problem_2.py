@@ -23,14 +23,7 @@ def roe(x):
 
 # The multidimensional distribution. Takes in an array of d values
 def big_roe(d_vector):
-    # assert isinstance(d_vector, np.ndarray)
-    # assert np.all(isinstance(, (np.floating, float, int)))
     return np.prod(roe(d_vector))
-    # result = 1
-    # for element in d_vector:
-    #     # print("element is " + str(element) + " with type " + str(type(element)))
-    #     result *= roe(element)
-    # return result
 
 
 # Uses a multidimensional gaussian to propose a new position for the distribution
@@ -38,17 +31,10 @@ def prop_step(old_pos, beta):
     assert isinstance(old_pos, np.ndarray)
     assert isinstance(beta, (int, np.integer, float, np.floating))
     assert beta > 0
-    # finding the standard deviation so I can plug it directly into the builtin function random provides
-    # new_pos = np.zeros([len(old_pos)])
-
-    # I don't get this... but I was told to do it in the documentation given here:
-    # https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html
-    inc = beta * np.random.randn(len(old_pos))
-    return old_pos + inc
-    # sigma = 1 / (2 * beta)
-    # for i, element in enumerate(old_pos):
-    #     new_pos[i] = element + np.random.normal(scale=sigma)
-    # return new_pos
+    # inc = beta * np.random.randn(len(old_pos))
+    # takes in the mean, covariance matrix, and size
+    inc = np.random.multivariate_normal(np.zeros([len(old_pos)]), np.identity(len(old_pos)) * beta ** 2)
+    return np.add(old_pos, inc, out=old_pos)
 
 
 # Creates a histogram out of the data
@@ -115,7 +101,7 @@ def sampler(dim, num_steps, beta):
     assert dim > 0 and num_steps > 0 and beta > 0
     # The initial position in d-space
     # cur_pos = np.zeros([dim])
-    cur_pos = np.random.uniform(-2, 5, [dim])
+    cur_pos = np.random.uniform(-1, 4, [dim])
     # This is the pdf evaluated at the current step
     old_prob = big_roe(cur_pos)
     # Keeps track of all past steps
@@ -132,6 +118,7 @@ def sampler(dim, num_steps, beta):
     for i in range(num_steps):
         # Record where we've gone (either we accepted the proposal, or we stayed put)
         journey[i] = cur_pos[0]
+        # Prints out the time taken when it's 25%, 50%, and 75% finished running the algorithm
         if i == num_steps // 4:
             print("25% complete (" + str(dim) + "-dimensions, " + str(num_steps) + " step, beta = " + str(beta) + ")")
             quarter_time = time.time()
@@ -251,7 +238,7 @@ def many_dims(adjusts=False):
             dim_plot(i, beta=beta_dependence(i))
         for i in np.arange(70, 101, 10):
             dim_plot(i, beta=beta_dependence(i))
-    # If we want to use a beta that
+    # If we want to use a beta that is static
     else:
         for i in range(1, 6):
             dim_plot(i)
@@ -265,6 +252,7 @@ def beta_dependence(dim):
 
 
 if __name__ == "__main__":
+    print(prop_step(np.zeros([10]), 0.3))
     many_dims(adjusts=False)
-    low_bound = get_low_bound(start=8, stop=30)
-    upper_bound = get_upper_bound(low_bound)
+    # low_bound = get_low_bound(start=8, stop=30)
+    # upper_bound = get_upper_bound(low_bound)
