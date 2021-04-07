@@ -5,8 +5,9 @@ import matplotlib
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from mcmc_dist import prop_step
+from scipy.stats import norm
 
-n_bins = 50
+n_bins = 100
 start_time = 0.1
 stop_time = 8
 calculated_tau = 2.12
@@ -25,9 +26,10 @@ lifetimes = np.array(raw_data["TIME"])
 # Sampler based on the Metropolis Hastings (M-H) algorithm. It's a function that takes as inputs: the dimension d, the
 # total number of steps in the Markov chain N, and the tuning parameter of the Gaussian proposal
 # distribution beta > 0. When d > 0, we have a multi-dimensional Gaussian
+
 def sampler(num_steps, beta):
     assert num_steps > 0 and beta > 0
-    cur_tau = np.random.uniform(low=0.1, high=8)
+    cur_tau = calculated_tau
     # This is the pdf evaluated at the current step
     old_prob = target_dist(cur_tau)
     # Keeps track of all past steps
@@ -46,7 +48,6 @@ def sampler(num_steps, beta):
         # Record where we've gone (either we accepted the proposal, or we stayed put)
         journey[i] = cur_tau
         # print("cur_tau is " + str(cur_tau))
-        print(target_dist(cur_tau))
         # Prints out the time taken when it's 25%, 50%, and 75% finished running the algorithm
         # if i == num_steps // 4:
         #     print("25% complete (" + str(num_steps) + " steps, beta = " + str(beta) + ")")
@@ -86,22 +87,29 @@ def sampler(num_steps, beta):
     return journey, accept_rate
 
 
-def histogram(lab_data, title=None, show=True):
-    assert isinstance(lab_data, np.ndarray)
+def histogram(input_data, show=True):
+    assert isinstance(input_data, np.ndarray)
     # n_bins = min(len(lab_data) // 200, 100)
     # if n_bins < 20:
     #     n_bins = 20
     fig, axs = plt.subplots(1)
+    # finding the confidence interval
+    ci = norm(*norm.fit(input_data)).interval(0.68)
     # We can set the number of bins with the `bins` kwarg
-    counts, bins, bars = axs.hist(lab_data, bins=n_bins)
+    counts, bins, bars = axs.hist(input_data, bins=n_bins, zorder=1)
     # Plotting the proposal distribution
-    start = -2
-    stop = 5
-    delta = stop - start
-    lin = np.linspace(start_time, stop_time)
-    axs.plot(lin, (delta * len(raw_data) / n_bins) * decay_func(lin, calculated_tau))
-    if isinstance(title, str):
-        plt.title(title)
+    start = 1.7
+    stop = 3
+    lin = np.linspace(start, stop)
+    # delta = stop - start
+    # axs.plot(lin, (10 * delta * len(raw_data) / n_bins) * prior(lin))
+    max_height = np.amax(counts)
+    plt.fill_betweenx([0, max_height + 100], ci[0], ci[1], color='orange', alpha=0.2, zorder=5)
+    print("confidence interval is " + str(ci[0]) + " to " + str(ci[1]))
+    axs.plot(lin, max_height * prior(lin), color='r', zorder=10)
+    # axs.plot(lin, max_height * likelihood(lin))
+    title = "Muon lifetime, CI is: " + str(np.around(ci, decimals=5))
+    plt.title(title)
     if show:
         plt.show()
     return counts
@@ -109,16 +117,15 @@ def histogram(lab_data, title=None, show=True):
 
 def target_dist(tau):
     # print("Input: " + str(tau) + " likelihood is: " + str(likelihood(tau)) + " prior is: " + str(prior(tau)))
-    return log_likelihood(tau) + np.log(prior(tau))
+    return likelihood(tau) * prior(tau)
 
 
 # Likelihood function: probability of lifetime tau given the data in lifetime.dat
-def log_likelihood(tau):
+def likelihood(tau):
     array = 5.605 * decay_func(lifetimes, tau)
-    print("array is " + str(array) + " with length " + str(len(array)) + " " + str(len(lifetimes) == len(array)))
-    result = np.prod(np.log(array))
-    print("product is " + str(result))
-    return result
+    # print("array is " + str(array) + " with length " + str(len(array)) + " " + str(len(lifetimes) == len(array)))
+    # print("product is " + str(np.prod(array)))
+    return np.prod(array)
 
 
 # Everything is measured in microseconds
@@ -130,7 +137,7 @@ def decay_func(t, tau):
 
 # This is what I'm guessing the distribution is based on the frequentist analysis
 def prior(tau):
-    sigma = 1
+    sigma = 0.5
     mean = 2.12
     norm = 1 / (sigma * np.sqrt(2 * np.pi))
     expo = - 1 / 2 * ((tau - mean) / sigma) ** 2
@@ -138,7 +145,8 @@ def prior(tau):
 
 
 if __name__ == "__main__":
-    target_dist(calculated_tau)
-    target_dist(0.1)
-    # journey, accept_rate = sampler(1, 0.3)
-    # counts = histogram(journey, show=True)
+    # target_dist(calculated_tau)
+    # target_dist(calculated_tau + 0.2)
+    # target_dist(calculated_tau + 0.5)
+    journey, accept_rate = sampler(10 ** 4, 0.3)
+    counts = histogram(journey, show=True)
