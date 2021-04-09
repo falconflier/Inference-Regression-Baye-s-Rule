@@ -6,12 +6,13 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from mcmc_dist import prop_step
 from scipy.stats import norm
+from scipy.optimize import minimize
 
 n_bins = 100
 start_time = 0.1
 stop_time = 8
-calculated_tau = 2.12
-# This is the range from which we calculate the probability distribution
+calculated_tau = 2.436
+# This is the point at which we begin calculating acceptance rate
 term = 1000
 
 # I want the data to be a global variable
@@ -19,19 +20,19 @@ raw_data = pd.read_table("lifetime.dat", sep="\s+")
 lifetimes = np.array(raw_data["TIME"])
 # Some general information about the data collected
 # print(lifetimes)
-# print("The sum of the lifetimes is " + str(np.sum(lifetimes)))
-# print(np.average(lifetimes))
+# print("The sum of the lifetimes is " + str(np.sum(lifetimes)) + ", length is " + str(len(lifetimes)))
+# print(np.mean(lifetimes))
 
 
 # Sampler based on the Metropolis Hastings (M-H) algorithm. It's a function that takes as inputs: the dimension d, the
 # total number of steps in the Markov chain N, and the tuning parameter of the Gaussian proposal
 # distribution beta > 0. When d > 0, we have a multi-dimensional Gaussian
-
-def sampler(num_steps, beta):
+# Beta is the std_dev for the proposal distribution, sigma is the std_dev for the target distribution
+def sampler(num_steps, beta, sigma):
     assert num_steps > 0 and beta > 0
     cur_tau = calculated_tau
     # This is the pdf evaluated at the current step
-    old_prob = target_dist(cur_tau)
+    old_prob = target_dist(cur_tau, sigma)
     # Keeps track of all past steps
     journey = np.zeros([num_steps])
     # Keeps track of the number of accepted proposals in the last 10000 steps
@@ -47,24 +48,11 @@ def sampler(num_steps, beta):
     for i in range(num_steps):
         # Record where we've gone (either we accepted the proposal, or we stayed put)
         journey[i] = cur_tau
-        # print("cur_tau is " + str(cur_tau))
-        # Prints out the time taken when it's 25%, 50%, and 75% finished running the algorithm
-        # if i == num_steps // 4:
-        #     print("25% complete (" + str(num_steps) + " steps, beta = " + str(beta) + ")")
-        #     quarter_time = time.time()
-        #     print("time taken in this quarter: " + str(quarter_time - mh_s))
-        # elif i == num_steps // 2:
-        #     print("50% complete (" + str(num_steps) + " steps, beta = " + str(beta) + ")")
-        #     half_time = time.time()
-        #     print("time taken in this quarter: " + str(half_time - quarter_time))
-        # elif i == 3 * num_steps // 4:
-        #     print("75% complete (" + str(num_steps) + " steps, beta = " + str(beta) + ")")
-        #     print("time taken in this quarter: " + str(time.time() - half_time))
         # Draw a new step from the sampling distribution
         next_tau = prop_step(np.array([cur_tau]), beta)[0]
         # print("next_tau is " + str(next_tau))
         # The pdf evaluated at this proposed new step
-        new_prob = target_dist(next_tau)
+        new_prob = target_dist(next_tau, sigma)
         # If the new position has higher probability OR we draw a number less than their ratios, accept the proposal
         rand_number = np.random.random()
         # print("new prob is " + str(new_prob) + " old prob is " + str(old_prob) + " rand number is " + str(rand_number))
@@ -87,7 +75,7 @@ def sampler(num_steps, beta):
     return journey, accept_rate
 
 
-def histogram(input_data, show=True):
+def histogram(input_data, sigma, show=True):
     assert isinstance(input_data, np.ndarray)
     # n_bins = min(len(lab_data) // 200, 100)
     # if n_bins < 20:
@@ -106,7 +94,7 @@ def histogram(input_data, show=True):
     max_height = np.amax(counts)
     plt.fill_betweenx([0, max_height + 100], ci[0], ci[1], color='orange', alpha=0.2, zorder=5)
     print("confidence interval is " + str(ci[0]) + " to " + str(ci[1]))
-    axs.plot(lin, max_height * prior(lin), color='r', zorder=10)
+    axs.plot(lin, max_height * prior(lin, sigma) * sigma, color='r', zorder=10)
     # axs.plot(lin, max_height * likelihood(lin))
     title = "Muon lifetime, CI is: " + str(np.around(ci, decimals=5))
     plt.title(title)
@@ -115,14 +103,15 @@ def histogram(input_data, show=True):
     return counts
 
 
-def target_dist(tau):
+def target_dist(tau, sigma):
     # print("Input: " + str(tau) + " likelihood is: " + str(likelihood(tau)) + " prior is: " + str(prior(tau)))
-    return likelihood(tau) * prior(tau)
+    return likelihood(tau) * prior(tau, sigma)
 
 
-# Likelihood function: probability of lifetime tau given the data in lifetime.dat
+# Likelihood function: probability of a lifetime tau given the data in lifetime.dat
 def likelihood(tau):
     array = 5.605 * decay_func(lifetimes, tau)
+    # array = decay_func(lifetimes, tau)
     # print("array is " + str(array) + " with length " + str(len(array)) + " " + str(len(lifetimes) == len(array)))
     # print("product is " + str(np.prod(array)))
     return np.prod(array)
@@ -136,17 +125,21 @@ def decay_func(t, tau):
 
 
 # This is what I'm guessing the distribution is based on the frequentist analysis
-def prior(tau):
-    sigma = 0.5
-    mean = 2.12
+def prior(tau, sigma):
+    mean = calculated_tau
     norm = 1 / (sigma * np.sqrt(2 * np.pi))
     expo = - 1 / 2 * ((tau - mean) / sigma) ** 2
     return norm * np.exp(expo)
 
 
+# Useful for optimizations (because we can minimize)
+def neg_likelihood(tau):
+    return - likelihood(tau)
+
+
 if __name__ == "__main__":
-    # target_dist(calculated_tau)
-    # target_dist(calculated_tau + 0.2)
-    # target_dist(calculated_tau + 0.5)
-    journey, accept_rate = sampler(10 ** 4, 0.3)
-    counts = histogram(journey, show=True)
+    opt_tau = minimize(neg_likelihood, 2.2)
+    print(opt_tau)
+
+    journey, accept_rate = sampler(10 ** 6, 0.25, 1)
+    counts = histogram(journey, 0.1, show=True)
