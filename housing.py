@@ -8,7 +8,7 @@ info_types = ["CRIM", "ZN", "INDUS", "CHAS", "NOX", "RM", "AGE", "DIS", "RAD", "
 
 
 # Used to plot individual features to see what impacts MEDV most directly
-def make_plot():
+def make_plot(data):
     med_value = np.array(data["MEDV"])
     plt.ylabel("Median Value ($1000s)")
     column = "LSTAT"
