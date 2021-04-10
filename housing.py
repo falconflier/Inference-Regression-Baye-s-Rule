@@ -29,69 +29,54 @@ def estimate(design, labels, weights):
     return err
 
 
-# Takes in a non-standardized array of data. Normalizes it, and appends higher order terms to the data (which are also
-# normalized) to the array so that we can train on higher order terms (ignores interaction terms)
+# Takes in a non-standardized array of data, and adds higher powers of the features (ignores the last column)
 def add_powers(array, power):
     assert power > 0
-    array = np.transpose(array)
+    # This gets flipped, and we really need an n by 1 matrix
+    labels = np.reshape(array[:, -1], [len(array), 1])
+    array = array[:, :-1]
     result = array
-    ones = np.ones([len(array), len(array[0])])
+    ones = np.ones([len(result), len(result[0])])
     for i in range(2, power + 1):
-        result = np.vstack((result, array ** (ones * i)))
-    return np.transpose(result)
-
-
-# Very similar to add_power, but it ignores the labels and standardizes the result as well
-def add_powers_and_stand(array, power):
-    assert power > 0
-    # array = np.transpose(array)
-    # result = array
-    # ones = np.ones([len(array) - 1, len(array[0])])
-    # for i in range(2, power + 1):
-    #     # stand_array = stand(array ** (ones * i))
-    #     stand_array = array[:-1, :] ** (ones * i)
-    #     result = np.vstack((stand_array, result))
-    stand_array = stand(array)
-    stand_first_pows = np.transpose(stand_array[:, :-1])
-    labels = np.transpose(stand_array[:, -1])
-    ones = np.ones([len(stand_first_pows), len(stand_first_pows[0])])
-    result = stand_first_pows
-    for i in range(2, power + 1):
-        pass
-    result = np.vstack((labels, result))
-    return np.transpose(result)
-
-
-def test_add_powers():
-    test = np.ones([2, 3]) * 2
-    test[0, 2] = -1
-    print(test)
-    print("Add powers gave me\n" + str(add_powers(test, 1)))
-    print("add powers and standardize gave me\n" + str(add_powers_and_stand(test, 1)))
+        to_add = array ** (ones * i)
+        result = np.hstack((result, to_add))
+    result = np.hstack((result, labels))
+    return result
 
 
 # standardizes the first n elements by subtracting the mean and dividing by the standard
 # deviation. Then standardizes the remaining (test) data using the same mean and standard deviation
 def stand_n(array, n):
-    mean = np.mean(array[:n])
-    std_dev = np.std(array[:n])
-    training = (array[:n] - mean) / std_dev
-    test = (array[n:] - mean) / std_dev
-    return training, test
+    assert n > 1
+    result = np.transpose(array)
+    for i in range(len(array[0])):
+        mean = np.mean(result[i, :n])
+        std_dev = np.std(result[i, :n])
+        # this is to avoid divide-by-zero errors. Happens when all the data is exactly the same (only in code-testing)
+        if std_dev == 0:
+            std_dev = 1
+        result[i] = (result[i] - mean) / std_dev
+    return np.transpose(result)
 
 
-# Standardizes all elements of an array by subtracting the mean and dividing by the standard
-# deviation.
-def stand(array):
-    mean = np.mean(array)
-    std_dev = np.std(array)
-    return (array - mean) / std_dev
+# Adds powers and standardizes a very simple array
+def test_add_powers():
+    test = np.reshape(np.arange(1, 10), [3, 3])
+    test = np.hstack((test, np.ones([3, 1]) * (-1)))
+    print(test)
+    longer = add_powers(test, 3)
+    print("Add powers gave me\n" + str(longer))
+    print("Standardizing the array gives me\n" + str(stand_n(longer, 3).round(3)))
+    train, test = split_n(test, 2)
+    # print("Splitting gave \n" + str(test) + "\nand testing data \n" + str(test))
 
 
 # Splits the given array in two for training and test data.
 def split_n(array, n):
-    training = array[:n]
-    test = array[n:]
+    # print("Got array \n" + str(array))
+    training = array[:n, :]
+    test = array[n:, :]
+    # print("Returning arrays \n" + str(training) + "\n and \n" + str(test))
     return training, test
 
 
@@ -100,6 +85,9 @@ def in_out_error(input_data, splits, show=True, printout=False):
     # Keeps track of out in and out error for different sizes of training data
     mean_sq_err = np.zeros([3, len(splits)])
     for i, number in enumerate(splits):
+        # Standardizing the data
+        input_data = stand_n(input_data, number)
+        # Splitting it into training and testing data
         train, test = split_n(input_data, number)
         # features and labels in the training and test data. Features in the training data are the design matrix
         design = train[:, :-1]
@@ -126,7 +114,7 @@ def in_out_error(input_data, splits, show=True, printout=False):
         mean_sq_err[2, i] = out_err
         # Printing out the weights, if specified
         if printout:
-            power = int((len(data[0]) - 1 )/ 13)
+            power = int((len(input_data[0]) - 1) / 13)
             print("\nWeights for values (working with " + str(number) + " data points)")
             for j in range(len(info_types) - 1):
                 print(str(info_types[j]) + " has weight " + str(weights[j]))
@@ -136,6 +124,8 @@ def in_out_error(input_data, splits, show=True, printout=False):
     if show:
         plt.scatter(mean_sq_err[0], np.log(mean_sq_err[1]), label="log-training error")
         plt.scatter(mean_sq_err[0], np.log(mean_sq_err[2]), label="log-testing error")
+        # plt.scatter(mean_sq_err[0], mean_sq_err[1], label="training error")
+        # plt.scatter(mean_sq_err[0], mean_sq_err[2], label="testing error")
         plt.legend()
         plt.ylabel("ln(Error)")
         plt.xlabel("Quantity of training data")
@@ -144,10 +134,12 @@ def in_out_error(input_data, splits, show=True, printout=False):
 
 
 # Runs the in_out_error function for multiple dimensions, and graphs the result
-def in_out_multi(data, splits, max_pow):
+def in_out_multi(input_data, splits, max_pow):
     fig, (ax1, ax2) = plt.subplots(1, 2, sharey=False)
     for i, power in enumerate(max_pow):
-        mean_sq_err = in_out_error(data, splits, power=power, show=False)
+        print("Now working on power " + str(power))
+        poly_data = add_powers(input_data, power)
+        mean_sq_err = in_out_error(poly_data, splits, show=False)
         # Plotting the data
         alpha = 1
         if i < len(max_pow) / 2:
@@ -174,21 +166,19 @@ def in_out_multi(data, splits, max_pow):
 
 
 if __name__ == "__main__":
-    test_add_powers()
-    # # Gathering data
-    # read = pd.read_table("housing.dat", sep="\s+")
-    # data = np.array(read)
-    # np.random.shuffle(data)
-    # # norm_data = stand(data)
-    # expanded_data = add_powers_and_stand(data, 6)
-    # # One dimensional case
-    # train_sizes = [25, 50, 75, 100, 150, 200, 300]
-    #
-    # norm_data = expanded_data[:, :14]
-    # print(norm_data.shape)
-    # in_out_error(norm_data, train_sizes, show=True, printout=False)
-    # # deprecated_in_out_error(data, train_sizes, power=2, show=True, printout=True)
-    #
-    # # Testing higher order polynomials
-    # powers = np.arange(1, 7)
-    # # deprecated_in_out_multi(data, train_sizes, powers)
+    # Gathering data
+    read = pd.read_table("housing.dat", sep="\s+")
+    data = np.array(read)
+    np.random.shuffle(data)
+    # norm_data = stand(data)
+    expanded_data = add_powers(data, 6)
+    # One dimensional case
+    train_sizes = [25, 50, 75, 100, 150, 200, 300]
+
+    # in_out_error(data, train_sizes, show=True, printout=False)
+
+    # Testing higher order polynomials
+    powers = np.arange(1, 7)
+    powers = np.array([3])
+    all_data = np.array([int(512 * 4 / 5)])
+    in_out_multi(data, all_data, powers)
