@@ -47,10 +47,14 @@ def add_powers(array, power):
 
 # standardizes the first n elements by subtracting the mean and dividing by the standard
 # deviation. Then standardizes the remaining (test) data using the same mean and standard deviation
-def stand_n(array, n):
+def stand_n(array, n, ignore=None):
     assert n > 1
     result = np.transpose(array)
     for i in range(len(array[0])):
+        # ignore allows us to skip some data types (e.g. if we have binary data types)
+        if isinstance(ignore, list):
+            if i in list:
+                continue
         mean = np.mean(result[i, :n])
         std_dev = np.std(result[i, :n])
         # this is to avoid divide-by-zero errors. Happens when all the data is exactly the same (only in code-testing)

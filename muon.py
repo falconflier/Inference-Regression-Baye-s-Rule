@@ -81,22 +81,25 @@ def histogram(input_data, sigma, show=True):
     # if n_bins < 20:
     #     n_bins = 20
     fig, axs = plt.subplots(1)
-    # finding the confidence interval
-    ci = norm(*norm.fit(input_data)).interval(0.68)
+    # finding the confidence interval and median
+    object_from_scipy = norm(*norm.fit(input_data))
+    ci = object_from_scipy.interval(0.68)
+    median = object_from_scipy.median()
     # We can set the number of bins with the `bins` kwarg
     counts, bins, bars = axs.hist(input_data, bins=n_bins, zorder=1)
-    # Plotting the proposal distribution
+    # Plotting the frequentist distribution
     start = 1.7
     stop = 3
     lin = np.linspace(start, stop)
-    # delta = stop - start
-    # axs.plot(lin, (10 * delta * len(raw_data) / n_bins) * prior(lin))
     max_height = np.amax(counts)
+    # Plotting the median
+    plt.vlines(median, 0, max_height + 100, colors="purple", linestyles=':', zorder=15)
+    # Showing the confidence interval on the plot
     plt.fill_betweenx([0, max_height + 100], ci[0], ci[1], color='orange', alpha=0.2, zorder=5)
     print("confidence interval is " + str(ci[0]) + " to " + str(ci[1]))
-    axs.plot(lin, max_height * prior(lin, sigma) * sigma, color='r', zorder=10)
+    axs.plot(lin, max_height * freq_dist(lin, sigma) * sigma, color='r', zorder=10, alpha=0.5)
     # axs.plot(lin, max_height * likelihood(lin))
-    title = "Muon lifetime, CI is: " + str(np.around(ci, decimals=5))
+    title = "Muon lifetime median: " + str(np.round(median, decimals=3)) + " CI is: " + str(np.around(ci, decimals=3))
     plt.title(title)
     if show:
         plt.show()
@@ -124,12 +127,27 @@ def decay_func(t, tau):
     return norm_const * np.exp(-t / tau)
 
 
-# This is what I'm guessing the distribution is based on the frequentist analysis
-def prior(tau, sigma):
+def freq_dist(tau, sigma):
+    # This is what I'm guessing the distribution is based on the frequentist analysis
     mean = calculated_tau
     norm = 1 / (sigma * np.sqrt(2 * np.pi))
     expo = - 1 / 2 * ((tau - mean) / sigma) ** 2
     return norm * np.exp(expo)
+
+
+def prior(tau, sigma):
+    # A "uniform" distribution over a guess. Scaled by a constant factor, but that shouldn't matter
+    if isinstance(tau, (np.floating, float)):
+        if 1.5 < tau < 3.5:
+            return 1
+        else:
+            return 0
+    for i, time in enumerate(tau):
+        if 1.5 < time < 3.5:
+            tau[i] = 1
+        else:
+            tau[i] = 0
+    return tau
 
 
 # Useful for optimizations (because we can minimize)
