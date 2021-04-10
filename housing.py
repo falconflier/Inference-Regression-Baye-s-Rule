@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression, Ridge
 
 
 info_types = ["CRIM", "ZN", "INDUS", "CHAS", "NOX", "RM", "AGE", "DIS", "RAD", "TAX", "PTRATIO", "B", "LSTAT", "MEDV"]
@@ -80,8 +81,9 @@ def split_n(array, n):
     return training, test
 
 
-# Finds the training and generalization error for some data, at each split. Takes in standardized data
-def in_out_error(input_data, splits, show=True, printout=False):
+# Finds the training and generalization error for some data, at each split. Takes in standardized data, wrote all the
+# stuff pretty much by myself
+def homemade_in_out_error(input_data, splits, show=True, printout=False):
     # Keeps track of out in and out error for different sizes of training data
     mean_sq_err = np.zeros([3, len(splits)])
     for i, number in enumerate(splits):
@@ -95,10 +97,6 @@ def in_out_error(input_data, splits, show=True, printout=False):
         test_feats = test[:, :-1]
         test_lab = test[:, -1]
 
-        # Increasing the power of these polynomials
-        # design = add_powers(design, power)
-        # test_feats = add_powers(test_feats, power)
-
         # the transpose and inverse
         design_t = np.matrix.transpose(design)
         square = np.matmul(design_t, design)
@@ -107,6 +105,52 @@ def in_out_error(input_data, splits, show=True, printout=False):
         weights = np.matmul(coeff, train_lab)
         # Finding the error for both the training and testing data
         in_err = estimate(design, train_lab, weights)
+        out_err = estimate(test_feats, test_lab, weights)
+        # Recording said errors
+        mean_sq_err[0, i] = number
+        mean_sq_err[1, i] = in_err
+        mean_sq_err[2, i] = out_err
+        # Printing out the weights, if specified
+        if printout:
+            power = int((len(input_data[0]) - 1) / 13)
+            print("\nWeights for values (working with " + str(number) + " data points)")
+            for j in range(len(info_types) - 1):
+                print(str(info_types[j]) + " has weight " + str(weights[j]))
+                for pow in range(2, power + 1):
+                    idx = j + (len(info_types) - 1) * (pow - 1)
+                    print(str(info_types[j]) + "^" + str(pow) + " has weight " + str(weights[idx]))
+    if show:
+        plt.scatter(mean_sq_err[0], np.log(mean_sq_err[1]), label="log-training error")
+        plt.scatter(mean_sq_err[0], np.log(mean_sq_err[2]), label="log-testing error")
+        # plt.scatter(mean_sq_err[0], mean_sq_err[1], label="training error")
+        # plt.scatter(mean_sq_err[0], mean_sq_err[2], label="testing error")
+        plt.legend()
+        plt.ylabel("ln(Error)")
+        plt.xlabel("Quantity of training data")
+        plt.show()
+    return mean_sq_err
+
+
+# Finds the training and generalization error for some data, at each split. Takes in standardized data, uses sklearn
+def in_out_error(input_data, splits, show=True, printout=False):
+    # Keeps track of out in and out error for different sizes of training data
+    mean_sq_err = np.zeros([3, len(splits)])
+    for i, number in enumerate(splits):
+        # Standardizing the data
+        input_data = stand_n(input_data, number)
+        # Splitting it into training and testing data
+        train, test = split_n(input_data, number)
+        # features and labels in the training and test data. Features in the training data are the design matrix
+        X = train[:, :-1]
+        y = train[:, -1]
+        test_feats = test[:, :-1]
+        test_lab = test[:, -1]
+
+        reg = LinearRegression().fit(X, y)
+        weights = reg.coef_
+
+        # Finding the error for both the training and testing data
+        in_err = estimate(X, y, weights)
         out_err = estimate(test_feats, test_lab, weights)
         # Recording said errors
         mean_sq_err[0, i] = number
@@ -165,6 +209,59 @@ def in_out_multi(input_data, splits, max_pow):
     plt.show()
 
 
+# Does ridge regression on the data for different lamba coefficients, and plots the results
+def multi_ridge_reg(input_data, lambdas, show=True, printout=False, num_data = 300):
+    # Keeps track of out in and out error for different lambda values
+    mean_sq_err = np.zeros([3, len(lambdas)])
+    for i, number in enumerate(lambdas):
+        # Standardizing the data
+        input_data = stand_n(input_data, num_data)
+        # Splitting it into training and testing data
+        train, test = split_n(input_data, num_data)
+        # features and labels in the training and test data. Features in the training data are the design matrix
+        X = train[:, :-1]
+        y = train[:, -1]
+        test_feats = test[:, :-1]
+        test_lab = test[:, -1]
+
+        clf = Ridge(alpha=number)
+        clf.fit(X, y)
+        weights = clf.coef_
+
+        # Finding the error for both the training and testing data
+        in_err = estimate(X, y, weights)
+        out_err = estimate(test_feats, test_lab, weights)
+        # Recording said errors
+        mean_sq_err[0, i] = number
+        mean_sq_err[1, i] = in_err
+        mean_sq_err[2, i] = out_err
+        print("Number is " + str(mean_sq_err[0, i]) + " i is " + str(i))
+        print("Input error is " + str(mean_sq_err[1, i]) + " i is " + str(i))
+        print("Output error is " + str(mean_sq_err[2, i]) + " i is " + str(i))
+        # Printing out the weights, if specified
+        # if printout:
+        #     power = int((len(input_data[0]) - 1) / 13)
+        #     print("\nWeights for values (working with " + str(number) + " data points)")
+        #     for j in range(len(info_types) - 1):
+        #         print(str(info_types[j]) + " has weight " + str(weights[j]))
+        #         for pow in range(2, power + 1):
+        #             idx = j + (len(info_types) - 1) * (pow - 1)
+        #             print(str(info_types[j]) + "^" + str(pow) + " has weight " + str(weights[idx]))
+    if show:
+        x_ax_data = np.log10(mean_sq_err[0])
+        plt.scatter(x_ax_data, mean_sq_err[1], label="ridge training error")
+        plt.scatter(x_ax_data, mean_sq_err[2], label="ridge testing error")
+        plt.legend()
+        plt.ylabel("Error")
+        plt.xlabel("log10(lambda)")
+        plt.show()
+    return mean_sq_err
+
+
+def echo(val):
+    return val
+
+
 if __name__ == "__main__":
     # Gathering data
     read = pd.read_table("housing.dat", sep="\s+")
@@ -172,13 +269,17 @@ if __name__ == "__main__":
     np.random.shuffle(data)
     # norm_data = stand(data)
     expanded_data = add_powers(data, 6)
-    # One dimensional case
-    train_sizes = [25, 50, 75, 100, 150, 200, 300]
+    if 1 != echo(1):
+        # One dimensional case
+        train_sizes = [25, 50, 75, 100, 150, 200, 300]
+        in_out_error(data, train_sizes, show=True, printout=False)
 
-    # in_out_error(data, train_sizes, show=True, printout=False)
+        # Testing higher order polynomials
+        powers = np.arange(1, 7)
+        # all_data = np.array([int(512 * 4 / 5)])
+        in_out_multi(data, train_sizes, powers)
 
-    # Testing higher order polynomials
-    powers = np.arange(1, 7)
-    powers = np.array([3])
-    all_data = np.array([int(512 * 4 / 5)])
-    in_out_multi(data, all_data, powers)
+    # Testing ridge regression
+    logs = np.linspace(-10, 10, 10)
+    lambdas = 10 ** logs
+    multi_ridge_reg(expanded_data, lambdas)
