@@ -77,9 +77,6 @@ def sampler(num_steps, beta, sigma):
 
 def histogram(input_data, sigma, show=True):
     assert isinstance(input_data, np.ndarray)
-    # n_bins = min(len(lab_data) // 200, 100)
-    # if n_bins < 20:
-    #     n_bins = 20
     fig, axs = plt.subplots(1)
     # finding the confidence interval and median
     object_from_scipy = norm(*norm.fit(input_data))
@@ -155,9 +152,25 @@ def neg_likelihood(tau):
     return - likelihood(tau)
 
 
+def show_freq_best(tau):
+    fig, axs = plt.subplots(1)
+    # We can set the number of bins with the `bins` kwarg
+    counts, bins, bars = axs.hist(lifetimes, bins=n_bins, zorder=1)
+    # Plotting the frequentist distribution
+    start = 0.1
+    stop = 8.0
+    lin = np.linspace(start, stop)
+    max_height = np.amax(counts)
+    axs.plot(lin, max_height * decay_func(lin, tau), color='r', zorder=10, alpha=1)
+    title = "Best fit from frequentist analysis"
+    plt.title(title)
+    plt.show()
+
+
 if __name__ == "__main__":
+    show_freq_best(calculated_tau)
+
     opt_tau = minimize(neg_likelihood, 2.2)
     print(opt_tau)
-
     journey, accept_rate = sampler(10 ** 6, 0.25, 1)
     counts = histogram(journey, 0.1, show=True)
