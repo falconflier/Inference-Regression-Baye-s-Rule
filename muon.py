@@ -155,13 +155,13 @@ def neg_likelihood(tau):
 def show_freq_best(tau):
     fig, axs = plt.subplots(1)
     # We can set the number of bins with the `bins` kwarg
-    counts, bins, bars = axs.hist(lifetimes, bins=n_bins, zorder=1)
+    counts, bins, bars = axs.hist(lifetimes, bins=n_bins, zorder=1, density=True)
     # Plotting the frequentist distribution
     start = 0.1
     stop = 8.0
     lin = np.linspace(start, stop)
     max_height = np.amax(counts)
-    axs.plot(lin, max_height * decay_func(lin, tau), color='r', zorder=10, alpha=1)
+    axs.plot(lin, decay_func(lin, tau), color='r', zorder=10, alpha=1)
     title = "Best fit from frequentist analysis"
     plt.title(title)
     plt.show()

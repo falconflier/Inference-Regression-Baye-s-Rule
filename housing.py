@@ -214,7 +214,7 @@ def in_out_multi(input_data, splits, max_pow):
 
 
 # Does ridge regression on the data for different lamba coefficients, and plots the results
-def multi_ridge_reg(input_data, lambdas, show=True, printout=False, num_data = 300):
+def multi_ridge_reg(input_data, lambdas, show=True, printout=False, num_data=300):
     # Keeps track of out in and out error for different lambda values
     mean_sq_err = np.zeros([3, len(lambdas)])
     for i, number in enumerate(lambdas):
