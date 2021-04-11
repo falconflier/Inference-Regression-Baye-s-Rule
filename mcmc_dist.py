@@ -1,0 +1,292 @@
+import time
+import datetime
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+
+
+# We often only care about the last 10000 and I wanted to prevent magic numbers
+term = 10000
+
+
+# Raises 10 to the specified power
+def power(exp):
+    return 10 ** exp
+
+
+# defines the one-dimensional probability distribution specified in the handout. Multidimensional distributions will
+# be constructed by the product of these "simple" one dimensional distributions
+def roe(x):
+    assert isinstance(x, (int, float, np.integer, np.floating, np.ndarray))
+    return (1 / 3) * (np.exp(-x ** 2) + 2 * np.exp(-(x - 3) ** 2))
+
+
+# The multidimensional distribution. Takes in an array of d values
+def big_roe(d_vector):
+    return np.prod(roe(d_vector))
+
+
+def test_big_roe(iterations=1, is_print=True):
+    for i in range(iterations):
+        test_array = np.random.uniform(-1, 3, [10])
+        cor_result = 1
+        checking = big_roe(test_array)
+        for element in test_array:
+            cor_result *= roe(element)
+        if is_print:
+            print("the test array is " + str(test_array))
+            print("cor_result is " + str(cor_result))
+            print("big roe returns " + str(checking))
+        assert checking == cor_result
+    print("finished checking, no errors")
+
+
+# Uses a multidimensional gaussian to propose a new position for the distribution
+def prop_step(old_pos, beta):
+    assert isinstance(old_pos, np.ndarray)
+    assert isinstance(beta, (int, np.integer, float, np.floating))
+    assert beta > 0
+    # inc = beta * np.random.randn(len(old_pos))
+    # takes in the mean, covariance matrix, and size
+    inc = np.random.multivariate_normal(np.zeros([len(old_pos)]), np.identity(len(old_pos)) * beta ** 2)
+    return old_pos + inc
+
+
+# Creates a histogram out of the data
+def histogram(data, title=None, save=None):
+    assert isinstance(data, np.ndarray)
+    n_bins = min(len(data) // 200, 100)
+    if n_bins < 20:
+        n_bins = 20
+    fig, axs = plt.subplots(1)
+    # We can set the number of bins with the `bins` kwarg
+    axs.hist(data, bins=n_bins)
+    # Plotting the proposal distribution
+    start = -2
+    stop = 5
+    delta = stop - start
+    lin = np.linspace(start, stop)
+    axs.plot(lin, (delta * len(data) / n_bins) * roe(lin))
+    if isinstance(title, str):
+        plt.title(title)
+    if save:
+        plt.savefig(save + " histogram")
+        plt.close()
+    else:
+        plt.show()
+
+
+# Takes the elements of a numpy array and creates a trace plot.
+def trace_plot(matrix, show_hist=True, title=None, save=None):
+    assert isinstance(matrix, np.ndarray)
+    aggregate = matrix[:power(5)]
+    if matrix.ndim > 1:
+        aggregate = matrix[0, :]
+
+    # counting the acceptance rate over everything
+    changes = np.count_nonzero(np.diff(aggregate))
+    print("the acceptance rate over aggregate is " + str(changes/len(aggregate)))
+
+    x_ax = np.arange(0, len(aggregate))
+    plt.plot(x_ax, aggregate, zorder=0)
+    plt.vlines(len(aggregate) - term, -2, 5, colors="red", zorder=10)
+
+    if isinstance(title, str):
+        plt.title(title)
+
+    # if we've been told to save, we'll save it to the specified directory rather than displaying it
+    if isinstance(save, str):
+        plt.savefig(save + " trace plot")
+        plt.close()
+    else:
+        plt.show()
+
+    # Runs the histogram plotting method if asked to
+    if show_hist:
+        histogram(aggregate, title, save=save)
+
+
+# Sampler based on the Metropolis Hastings (M-H) algorithm. It's a function that takes as inputs: the dimension d, the
+# total number of steps in the Markov chain N, and the tuning parameter of the Gaussian proposal
+# distribution beta > 0. When d > 0, we have a multi-dimensional Gaussian
+def sampler(dim, num_steps, beta):
+    assert dim > 0 and num_steps > 0 and beta > 0
+    # The initial position in d-space
+    # cur_pos = np.zeros([dim])
+    cur_pos = np.random.uniform(-1, 4, [dim])
+    # cur_pos = np.zeros([dim])
+    # This is the pdf evaluated at the current step
+    old_prob = big_roe(cur_pos)
+    # Keeps track of all past steps
+    journey = np.zeros([num_steps])
+    # Keeps track of the number of accepted proposals in the last 10000 steps
+    num_accepts = 0
+    # Activates when we're in the last 10000 steps
+    is_ending = False
+    mh_s = time.time()
+    quarter_time = 0
+    half_time = 0
+
+    everything = np.zeros(num_steps)
+    # Iterates R&R for the specified number of steps
+    for i in range(num_steps):
+        # Record where we've gone (either we accepted the proposal, or we stayed put)
+        journey[i] = cur_pos[0]
+        # Prints out the time taken when it's 25%, 50%, and 75% finished running the algorithm
+        if i == num_steps // 4:
+            print("25% complete (" + str(dim) + "-dimensions, " + str(num_steps) + " step, beta = " + str(beta) + ")")
+            quarter_time = time.time()
+            print("time taken in this quarter: " + str(quarter_time - mh_s))
+        elif i == num_steps // 2:
+            print("50% complete (" + str(dim) + "-dimensions, " + str(num_steps) + " step, beta = " + str(beta) + ")")
+            half_time = time.time()
+            print("time taken in this quarter: " + str(half_time - quarter_time))
+        elif i == 3 * num_steps // 4:
+            print("75% complete (" + str(dim) + "-dimensions, " + str(num_steps) + " step, beta = " + str(beta) + ")")
+            print("time taken in this quarter: " + str(time.time() - half_time))
+        # Draw a new step from the sampling distribution
+        next_pos = prop_step(cur_pos, beta)
+        # The pdf evaluated at this proposed new step
+        new_prob = big_roe(next_pos)
+        # If the new position has higher probability OR we draw a number less than their ratios, accept the proposal
+        rand_number = np.random.random()
+        if new_prob > old_prob or rand_number < (new_prob / old_prob):
+            # print("new step is " + str(next_pos))
+            # print("took that step with probability " + str(big_roe(journey[i]) / big_roe(journey[i - 1])))
+            # print("random number was " + str(rand_number))
+            # Update the current position
+            cur_pos = next_pos
+            # Update the old probability
+            old_prob = new_prob
+            # This proposal was accepted, so we increment the number of acceptances
+            if is_ending or i > num_steps - term:
+                is_ending = True
+                num_accepts += 1
+    mh_e = time.time()
+    print("It took " + str(mh_e - mh_s) + " seconds to run MH algorithm")
+    accept_rate = -1
+    if num_steps > term:
+        print("number of accepts was " + str(num_accepts))
+        accept_rate = num_accepts / term
+        print("The percentage of accepted moves in the last " + str(term) + " steps is " + str(accept_rate))
+
+    # Debugging
+    # strangeness = 0
+    # is_strange = False
+    # for i, val in enumerate(journey):
+    #     if np.abs(val) > 10 and not is_strange:
+    #         print("got wacky around index " + str(i))
+    #         strangeness = i
+    #         is_strange = True
+    #     if is_strange and i - strangeness < 30:
+    #         print(journey[i])
+    # for i in range(strangeness - 10, strangeness + 20):
+    #     print(journey[i])
+    #     print("took that step with probability " + str(big_roe(journey[i]) / big_roe(journey[i - 1])))
+
+    return journey, accept_rate
+
+
+# Runs the sampler for a given beta and dimension. Returns the acceptance rate
+def dim_plot(dimension, beta=0.3, generate_images=True):
+    # Beta is inversely proportional to the width of the spread. Large beta implies thin gaussians; small beta implies
+    # lots of variance
+    steps = power(5)
+    path, rate = sampler(dimension, steps, beta)
+    if generate_images:
+        title = str(dimension) + "-dimensions, " + str(steps) + " steps, beta = " + str(beta) + ", acceptance rate = " + str(rate)
+        # directory to save images of graphs to
+        save_dir = "./graphs/" + str(dimension) + "d " + str(steps) + "n"
+        trace_s = time.time()
+        trace_plot(path, show_hist=True, title=title, save=save_dir)
+        trace_e = time.time()
+        print("It took " + str(trace_e - trace_s) + " seconds to run trace_plot in " + str(dimension) + " dimensions")
+    return rate
+
+
+# Uses the dim_plot method to find a lower bound on beta (trying to get acceptance_rate ~ 23.4%
+# uses the dimensions start and stop (inclusive) if specified
+def get_low_bound(start=8, stop=20):
+    lower_bound = np.zeros([stop - start + 1, 3])
+    for i in range(start, stop + 1):
+        beta = 0.01
+        accept_rate = -1
+        while True:
+            lower_bound[i - start] = np.array([i, beta, accept_rate])
+            accept_rate = dim_plot(i, beta, generate_images=False)
+            if accept_rate < 0.234:
+                if accept_rate < 0.1:
+                    beta += 0.2
+                elif accept_rate < 0.15:
+                    beta += 0.1
+                else:
+                    beta += 0.02
+            else:
+                break
+    print("lower bounds are:")
+    for row in lower_bound:
+        string = ""
+        for element in row:
+            string = string + str(element) + ", "
+        print(string)
+    return lower_bound
+
+
+# Uses the dim_plot method to find a lower bound on beta (trying to get acceptance_rate ~ 23.4%
+# Uses the start and stop dimensions found in the lower_bound array
+def get_upper_bound(lower_bound):
+    start = int(lower_bound[0, 0])
+    stop = int(lower_bound[-1, 0])
+    print("start is " + str(start))
+    print("stop is " + str(stop))
+    upper_bound = np.zeros([stop - start + 1, 3])
+    for i in range(start, stop + 1):
+        beta = lower_bound[i - start, 1] + 0.5
+        accept_rate = -1
+        while True:
+            upper_bound[i - start] = np.array([i, beta, accept_rate])
+            accept_rate = dim_plot(i, beta, generate_images=False)
+            if accept_rate > 0.234:
+                if accept_rate > 0.5:
+                    beta -= 0.2
+                elif accept_rate > 0.35:
+                    beta -= 0.1
+                else:
+                    beta -= 0.02
+            else:
+                break
+    print("upper bounds are:")
+    for row in upper_bound:
+        string = ""
+        for element in row:
+            string = string + str(element) + ", "
+        print(string)
+    return upper_bound
+
+
+# Gets trace plots for many dimensions
+def many_dims(adjusts=False):
+    # If we want to use a beta that varies based on dimension
+    if adjusts:
+        for i in range(1, 6):
+            dim_plot(i, beta=beta_dependence(i))
+        for i in np.arange(70, 101, 10):
+            dim_plot(i, beta=beta_dependence(i))
+    # If we want to use a beta that is static
+    else:
+        for i in range(1, 6):
+            dim_plot(i)
+        for i in np.arange(70, 101, 10):
+            dim_plot(i)
+
+
+# Encodes the dimensionality dependence of beta, beta -> beta(dim). Found empirically
+def beta_dependence(dim):
+    return 0.037858 * dim + 0.353123
+
+
+if __name__ == "__main__":
+    dim_plot(100, beta=0.3)
+    # many_dims(adjusts=False)
+    # low_bound = get_low_bound(start=8, stop=30)
+    # upper_bound = get_upper_bound(low_bound)

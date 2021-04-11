@@ -1,0 +1,888 @@
+"Sex (0=M, 1=F)",Age,Siblings/Spouses Aboard,Parents/Children Aboard,Fare,Survived,Pclass,Name
+0,22,1,0,7.25,0,3,Mr. Owen Harris Braund
+1,38,1,0,71.2833,1,1,Mrs. John Bradley (Florence Briggs Thayer) Cumings
+1,26,0,0,7.925,1,3,Miss. Laina Heikkinen
+1,35,1,0,53.1,1,1,Mrs. Jacques Heath (Lily May Peel) Futrelle
+0,35,0,0,8.05,0,3,Mr. William Henry Allen
+0,27,0,0,8.4583,0,3,Mr. James Moran
+0,54,0,0,51.8625,0,1,Mr. Timothy J McCarthy
+0,2,3,1,21.075,0,3,Master. Gosta Leonard Palsson
+1,27,0,2,11.1333,1,3,Mrs. Oscar W (Elisabeth Vilhelmina Berg) Johnson
+1,14,1,0,30.0708,1,2,Mrs. Nicholas (Adele Achem) Nasser
+1,4,1,1,16.7,1,3,Miss. Marguerite Rut Sandstrom
+1,58,0,0,26.55,1,1,Miss. Elizabeth Bonnell
+0,20,0,0,8.05,0,3,Mr. William Henry Saundercock
+0,39,1,5,31.275,0,3,Mr. Anders Johan Andersson
+1,14,0,0,7.8542,0,3,Miss. Hulda Amanda Adolfina Vestrom
+1,55,0,0,16,1,2,Mrs. (Mary D Kingcome) Hewlett
+0,2,4,1,29.125,0,3,Master. Eugene Rice
+0,23,0,0,13,1,2,Mr. Charles Eugene Williams
+1,31,1,0,18,0,3,Mrs. Julius (Emelia Maria Vandemoortele) Vander Planke
+1,22,0,0,7.225,1,3,Mrs. Fatima Masselmani
+0,35,0,0,26,0,2,Mr. Joseph J Fynney
+0,34,0,0,13,1,2,Mr. Lawrence Beesley
+1,15,0,0,8.0292,1,3,Miss. Anna McGowan
+0,28,0,0,35.5,1,1,Mr. William Thompson Sloper
+1,8,3,1,21.075,0,3,Miss. Torborg Danira Palsson
+1,38,1,5,31.3875,1,3,Mrs. Carl Oscar (Selma Augusta Emilia Johansson) Asplund
+0,26,0,0,7.225,0,3,Mr. Farred Chehab Emir
+0,19,3,2,263,0,1,Mr. Charles Alexander Fortune
+1,24,0,0,7.8792,1,3,Miss. Ellen O'Dwyer
+0,23,0,0,7.8958,0,3,Mr. Lalio Todoroff
+0,40,0,0,27.7208,0,1,Don. Manuel E Uruchurtu
+1,48,1,0,146.5208,1,1,Mrs. William Augustus (Marie Eugenie) Spencer
+1,18,0,0,7.75,1,3,Miss. Mary Agatha Glynn
+0,66,0,0,10.5,0,2,Mr. Edward H Wheadon
+0,28,1,0,82.1708,0,1,Mr. Edgar Joseph Meyer
+0,42,1,0,52,0,1,Mr. Alexander Oskar Holverson
+0,18,0,0,7.2292,1,3,Mr. Hanna Mamee
+0,21,0,0,8.05,0,3,Mr. Ernest Charles Cann
+1,18,2,0,18,0,3,Miss. Augusta Maria Vander Planke
+1,14,1,0,11.2417,1,3,Miss. Jamila Nicola-Yarred
+1,40,1,0,9.475,0,3,Mrs. Johan (Johanna Persdotter Larsson) Ahlin
+1,27,1,0,21,0,2,Mrs. William John Robert (Dorothy Ann Wonnacott) Turpin
+1,3,1,2,41.5792,1,2,Miss. Simonne Marie Anne Andree Laroche
+1,19,0,0,7.8792,1,3,Miss. Margaret Delia Devaney
+0,30,0,0,8.05,0,3,Mr. William John Rogers
+0,20,1,0,15.5,0,3,Mr. Denis Lennon
+1,27,0,0,7.75,1,3,Miss. Bridget O'Driscoll
+0,16,2,0,21.6792,0,3,Mr. Youssef Samaan
+1,18,1,0,17.8,0,3,Mrs. Josef (Josefine Franchi) Arnold-Franchi
+0,7,4,1,39.6875,0,3,Master. Juha Niilo Panula
+0,21,0,0,7.8,0,3,Mr. Richard Cater Nosworthy
+1,49,1,0,76.7292,1,1,Mrs. Henry Sleeper (Myna Haxtun) Harper
+1,29,1,0,26,1,2,Mrs. Lizzie (Elizabeth Anne Wilkinson) Faunthorpe
+0,65,0,1,61.9792,0,1,Mr. Engelhart Cornelius Ostby
+0,46,0,0,35.5,1,1,Mr. Hugh Woolner
+1,21,0,0,10.5,1,2,Miss. Emily Rugg
+0,28.5,0,0,7.2292,0,3,Mr. Mansouer Novel
+1,5,1,2,27.75,1,2,Miss. Constance Mirium West
+0,11,5,2,46.9,0,3,Master. William Frederick Goodwin
+0,22,0,0,7.2292,0,3,Mr. Orsen Sirayanian
+1,38,0,0,80,1,1,Miss. Amelie Icard
+0,45,1,0,83.475,0,1,Mr. Henry Birkhardt Harris
+0,4,3,2,27.9,0,3,Master. Harald Skoog
+0,64,0,0,27.7208,0,1,Mr. Albert A Stewart
+0,7,1,1,15.2458,1,3,Master. Gerios Moubarek
+1,29,0,0,10.5,1,2,Mrs. (Elizabeth Ramell) Nye
+0,19,0,0,8.1583,0,3,Mr. Ernest James Crease
+1,17,4,2,7.925,1,3,Miss. Erna Alexandra Andersson
+0,26,2,0,8.6625,0,3,Mr. Vincenz Kink
+0,32,0,0,10.5,0,2,Mr. Stephen Curnow Jenkin
+1,16,5,2,46.9,0,3,Miss. Lillian Amy Goodwin
+0,21,0,0,73.5,0,2,Mr. Ambrose Jr Hood
+0,26,1,0,14.4542,0,3,Mr. Apostolos Chronopoulos
+0,32,0,0,56.4958,1,3,Mr. Lee Bing
+0,25,0,0,7.65,0,3,Mr. Sigurd Hansen Moen
+0,23,0,0,7.8958,0,3,Mr. Ivan Staneff
+0,28,0,0,8.05,0,3,Mr. Rahamin Haim Moutal
+0,0.83,0,2,29,1,2,Master. Alden Gates Caldwell
+1,30,0,0,12.475,1,3,Miss. Elizabeth Dowdell
+0,22,0,0,9,0,3,Mr. Achille Waelens
+0,29,0,0,9.5,1,3,Mr. Jan Baptist Sheerlinck
+1,31,0,0,7.7875,1,3,Miss. Brigdet Delia McDermott
+0,28,0,0,47.1,0,1,Mr. Francisco M Carrau
+1,17,0,0,10.5,1,2,Miss. Bertha Ilett
+1,33,3,0,15.85,1,3,Mrs. Karl Alfred (Maria Mathilda Gustafsson) Backstrom
+0,16,1,3,34.375,0,3,Mr. William Neal Ford
+0,20,0,0,8.05,0,3,Mr. Selman Francis Slocovski
+1,23,3,2,263,1,1,Miss. Mabel Helen Fortune
+0,24,0,0,8.05,0,3,Mr. Francesco Celotti
+0,29,0,0,8.05,0,3,Mr. Emil Christmann
+0,20,0,0,7.8542,0,3,Mr. Paul Edvin Andreasson
+0,46,1,0,61.175,0,1,Mr. Herbert Fuller Chaffee
+0,26,1,2,20.575,0,3,Mr. Bertram Frank Dean
+0,59,0,0,7.25,0,3,Mr. Daniel Coxon
+0,22,0,0,8.05,0,3,Mr. Charles Joseph Shorney
+0,71,0,0,34.6542,0,1,Mr. George B Goldschmidt
+0,23,0,1,63.3583,1,1,Mr. William Bertram Greenfield
+1,34,0,1,23,1,2,Mrs. John T (Ada Julia Bone) Doling
+0,34,1,0,26,0,2,Mr. Sinai Kantor
+1,28,0,0,7.8958,0,3,Miss. Matilda Petranec
+0,29,0,0,7.8958,0,3,Mr. Pastcho Petroff
+0,21,0,1,77.2875,0,1,Mr. Richard Frasar White
+0,33,0,0,8.6542,0,3,Mr. Gustaf Joel Johansson
+0,37,2,0,7.925,0,3,Mr. Anders Vilhelm Gustafsson
+0,28,0,0,7.8958,0,3,Mr. Stoytcho Mionoff
+1,21,0,0,7.65,1,3,Miss. Anna Kristine Salkjelsvik
+0,29,0,0,7.775,1,3,Mr. Albert Johan Moss
+0,38,0,0,7.8958,0,3,Mr. Tido Rekic
+1,28,1,0,24.15,1,3,Miss. Bertha Moran
+0,47,0,0,52,0,1,Mr. Walter Chamberlain Porter
+1,14.5,1,0,14.4542,0,3,Miss. Hileni Zabour
+0,22,0,0,8.05,0,3,Mr. David John Barton
+1,20,1,0,9.825,0,3,Miss. Katriina Jussila
+1,17,0,0,14.4583,0,3,Miss. Malake Attalah
+0,21,0,0,7.925,0,3,Mr. Edvard Pekoniemi
+0,70.5,0,0,7.75,0,3,Mr. Patrick Connors
+0,29,1,0,21,0,2,Mr. William John Robert Turpin
+0,24,0,1,247.5208,0,1,Mr. Quigg Edmond Baxter
+1,2,4,2,31.275,0,3,Miss. Ellis Anna Maria Andersson
+0,21,2,0,73.5,0,2,Mr. Stanley George Hickman
+0,19,0,0,8.05,0,3,Mr. Leonard Charles Moore
+0,32.5,1,0,30.0708,0,2,Mr. Nicholas Nasser
+1,32.5,0,0,13,1,2,Miss. Susan Webber
+0,54,0,1,77.2875,0,1,Mr. Percival Wayland White
+0,12,1,0,11.2417,1,3,Master. Elias Nicola-Yarred
+0,19,0,0,7.75,0,3,Mr. Martin McMahon
+0,24,0,0,7.1417,1,3,Mr. Fridtjof Arne Madsen
+1,2,1,1,22.3583,1,3,Miss. Anna Peter
+0,45,0,0,6.975,0,3,Mr. Johan Ekstrom
+0,33,0,0,7.8958,0,3,Mr. Jozef Drazenoic
+0,20,0,0,7.05,0,3,Mr. Domingos Fernandeo Coelho
+1,47,1,0,14.5,0,3,Mrs. Alexander A (Grace Charity Laury) Robins
+1,29,1,0,26,1,2,Mrs. Leopold (Mathilde Francoise Pede) Weisz
+0,25,0,0,13,0,2,Mr. Samuel James Hayden Sobey
+0,23,0,0,15.0458,0,2,Mr. Emile Richard
+1,19,0,2,26.2833,1,1,Miss. Helen Monypeny Newsom
+0,37,1,0,53.1,0,1,Mr. Jacques Heath Futrelle
+0,16,0,0,9.2167,0,3,Mr. Olaf Elon Osen
+0,24,0,0,79.2,0,1,Mr. Victor Giglio
+1,40,0,2,15.2458,0,3,Mrs. Joseph (Sultana) Boulos
+1,22,0,0,7.75,1,3,Miss. Anna Sofia Nysten
+1,24,1,0,15.85,1,3,Mrs. Pekka Pietari (Elin Matilda Dolck) Hakkarainen
+0,19,0,0,6.75,0,3,Mr. Jeremiah Burke
+0,18,0,0,11.5,0,2,Mr. Edgardo Samuel Andrew
+0,19,1,1,36.75,0,2,Mr. Joseph Charles Nicholls
+0,27,0,0,7.7958,1,3,Mr. August Edvard Andersson
+1,9,2,2,34.375,0,3,Miss. Robina Maggie Ford
+0,36.5,0,2,26,0,2,Mr. Michel Navratil
+0,42,0,0,13,0,2,Rev. Thomas Roussel Davids Byles
+0,51,0,0,12.525,0,2,Rev. Robert James Bateman
+1,22,1,0,66.6,1,1,Mrs. Thomas (Edith Wearne) Pears
+0,55.5,0,0,8.05,0,3,Mr. Alfonzo Meo
+0,40.5,0,2,14.5,0,3,Mr. Austin Blyler van Billiard
+0,27,0,0,7.3125,0,3,Mr. Ole Martin Olsen
+0,51,0,1,61.3792,0,1,Mr. Charles Duane Williams
+1,16,0,0,7.7333,1,3,Miss. Katherine Gilnagh
+0,30,0,0,8.05,0,3,Mr. Harry Corn
+0,37,0,0,8.6625,0,3,Mr. Mile Smiljanic
+0,5,8,2,69.55,0,3,Master. Thomas Henry Sage
+0,44,0,1,16.1,0,3,Mr. John Hatfield Cribb
+1,40,0,0,15.75,1,2,Mrs. James (Elizabeth Inglis Milne) Watt
+0,26,0,0,7.775,0,3,Mr. John Viktor Bengtsson
+0,17,0,0,8.6625,0,3,Mr. Jovo Calic
+0,1,4,1,39.6875,0,3,Master. Eino Viljami Panula
+0,9,0,2,20.525,1,3,Master. Frank John William Goldsmith
+1,48,0,1,55,1,1,Mrs. (Edith Martha Bowerman) Chibnall
+1,45,1,4,27.9,0,3,Mrs. William (Anna Bernhardina Karlsson) Skoog
+0,60,0,0,25.925,0,1,Mr. John D Baumann
+0,28,0,0,56.4958,0,3,Mr. Lee Ling
+0,61,0,0,33.5,0,1,Mr. Wyckoff Van der hoef
+0,4,4,1,29.125,0,3,Master. Arthur Rice
+1,1,1,1,11.1333,1,3,Miss. Eleanor Ileen Johnson
+0,21,0,0,7.925,0,3,Mr. Antti Wilhelm Sivola
+0,56,0,0,30.6958,0,1,Mr. James Clinch Smith
+0,18,1,1,7.8542,0,3,Mr. Klas Albin Klasen
+0,5,3,1,25.4667,0,3,Master. Henry Forbes Lefebre
+1,50,0,0,28.7125,0,1,Miss. Ann Elizabeth Isham
+0,30,0,0,13,0,2,Mr. Reginald Hale
+0,36,0,0,0,0,3,Mr. Lionel Leonard
+1,8,8,2,69.55,0,3,Miss. Constance Gladys Sage
+0,39,0,0,15.05,0,2,Mr. Rene Pernot
+0,9,4,2,31.3875,0,3,Master. Clarence Gustaf Hugo Asplund
+0,1,2,1,39,1,2,Master. Richard F Becker
+1,4,0,2,22.025,1,3,Miss. Luise Gretchen Kink-Heilmann
+0,39,0,0,50,0,1,Mr. Hugh Roscoe Rood
+1,26,1,0,15.5,1,3,Mrs. Thomas (Johanna Godfrey) O'Brien
+0,45,0,0,26.55,1,1,Mr. Charles Hallace Romaine
+0,40,1,1,15.5,0,3,Mr. John Bourke
+0,36,0,0,7.8958,0,3,Mr. Stjepan Turcin
+1,32,0,0,13,1,2,Mrs. (Rosa) Pinsky
+0,19,0,0,13,0,2,Mr. William Carbines
+1,19,1,0,7.8542,1,3,Miss. Carla Christine Nielsine Andersen-Jensen
+0,3,1,1,26,1,2,Master. Michel M Navratil
+1,44,0,0,27.7208,1,1,Mrs. James Joseph (Margaret Tobin) Brown
+1,58,0,0,146.5208,1,1,Miss. Elise Lurette
+0,28,0,0,7.75,0,3,Mr. Robert Mernagh
+0,42,0,1,8.4042,0,3,Mr. Karl Siegwart Andreas Olsen
+1,21,0,0,7.75,1,3,Miss. Margaret Madigan
+1,24,0,0,13,0,2,Miss. Henriette Yrois
+0,28,0,0,9.5,0,3,Mr. Nestor Cyriel Vande Walle
+0,17,8,2,69.55,0,3,Mr. Frederick Sage
+0,34,0,0,6.4958,0,3,Mr. Jakob Alfred Johanson
+0,45.5,0,0,7.225,0,3,Mr. Gerious Youseff
+0,18,0,0,8.05,1,3,Mr. Gurshon Cohen
+1,2,0,1,10.4625,0,3,Miss. Telma Matilda Strom
+0,32,1,0,15.85,0,3,Mr. Karl Alfred Backstrom
+0,26,0,0,18.7875,1,3,Mr. Nassef Cassem Albimona
+1,16,0,0,7.75,1,3,Miss. Helen Carr
+0,40,0,0,31,1,1,Mr. Henry Blank
+0,24,0,0,7.05,0,3,Mr. Ahmed Ali
+1,35,0,0,21,1,2,Miss. Clear Annie Cameron
+0,22,0,0,7.25,0,3,Mr. John Henry Perkin
+0,30,0,0,13,0,2,Mr. Hans Kristensen Givard
+0,22,1,0,7.75,0,3,Mr. Philip Kiernan
+1,31,1,0,113.275,1,1,Miss. Madeleine Newell
+1,27,0,0,7.925,1,3,Miss. Eliina Honkanen
+0,42,1,0,27,0,2,Mr. Sidney Samuel Jacobsohn
+1,32,0,0,76.2917,1,1,Miss. Albina Bazzani
+0,30,0,0,10.5,0,2,Mr. Walter Harris
+0,16,0,0,8.05,1,3,Mr. Victor Francis Sunderland
+0,27,0,0,13,0,2,Mr. James H Bracken
+0,51,0,0,8.05,0,3,Mr. George Henry Green
+0,22,0,0,7.8958,0,3,Mr. Christo Nenkoff
+0,38,1,0,90,1,1,Mr. Frederick Maxfield Hoyt
+0,22,0,0,9.35,0,3,Mr. Karl Ivar Sven Berglund
+0,19,0,0,10.5,1,2,Mr. William John Mellors
+0,20.5,0,0,7.25,0,3,Mr. John Hall Lovell
+0,18,0,0,13,0,2,Mr. Arne Jonas Fahlstrom
+1,12,3,1,25.4667,0,3,Miss. Mathilde Lefebre
+1,35,1,0,83.475,1,1,Mrs. Henry Birkhardt (Irene Wallach) Harris
+0,29,0,0,7.775,0,3,Mr. Bengt Edvin Larsson
+0,59,0,0,13.5,0,2,Mr. Ernst Adolf Sjostedt
+1,5,4,2,31.3875,1,3,Miss. Lillian Gertrud Asplund
+0,24,0,0,10.5,0,2,Mr. Robert William Norman Leyson
+1,21,0,0,7.55,0,3,Miss. Alice Phoebe Harknett
+0,44,1,0,26,0,2,Mr. Stephen Hold
+1,8,0,2,26.25,1,2,Miss. Marjorie Collyer
+0,19,0,0,10.5,0,2,Mr. Frederick William Pengelly
+0,33,0,0,12.275,0,2,Mr. George Henry Hunt
+1,19,1,0,14.4542,0,3,Miss. Thamine Zabour
+1,18,1,0,15.5,1,3,Miss. Katherine Murphy
+0,29,0,0,10.5,0,2,Mr. Reginald Charles Coleridge
+0,22,0,0,7.125,0,3,Mr. Matti Alexanteri Maenpaa
+0,30,0,0,7.225,0,3,Mr. Sleiman Attalah
+0,44,2,0,90,0,1,Dr. William Edward Minahan
+1,25,0,0,7.775,0,3,Miss. Agda Thorilda Viktoria Lindahl
+1,24,0,2,14.5,1,2,Mrs. William (Anna) Hamalainen
+0,37,1,1,52.5542,1,1,Mr. Richard Leonard Beckwith
+0,54,1,0,26,0,2,Rev. Ernest Courtenay Carter
+0,18,0,0,7.25,0,3,Mr. James George Reed
+1,29,1,1,10.4625,0,3,Mrs. Wilhelm (Elna Matilda Persson) Strom
+0,62,0,0,26.55,0,1,Mr. William Thomas Stead
+0,30,1,0,16.1,0,3,Mr. William Arthur Lobb
+1,41,0,2,20.2125,0,3,Mrs. Viktor (Helena Wilhelmina) Rosblom
+1,29,0,2,15.2458,1,3,Mrs. Darwis (Hanne Youssef Razi) Touma
+1,38,0,0,79.2,1,1,Mrs. Gertrude Maybelle Thorne
+1,30,0,0,86.5,1,1,Miss. Gladys Cherry
+1,35,0,0,512.3292,1,1,Miss. Anna Ward
+1,50,0,1,26,1,2,Mrs. (Lutie Davis) Parrish
+0,3,4,2,31.3875,1,3,Master. Edvin Rojj Felix Asplund
+0,52,1,1,79.65,0,1,Mr. Emil Taussig
+0,40,0,0,0,0,1,Mr. William Harrison
+1,21,0,0,7.75,0,3,Miss. Delia Henry
+0,36,0,0,10.5,0,2,Mr. David Reeves
+0,16,4,1,39.6875,0,3,Mr. Ernesti Arvid Panula
+0,25,1,0,7.775,1,3,Mr. Ernst Ulrik Persson
+1,58,0,1,153.4625,1,1,Mrs. William Thompson (Edith Junkins) Graham
+1,35,0,0,135.6333,1,1,Miss. Amelia Bissette
+0,28,0,0,31,0,1,Mr. Alexander Cairns
+0,25,0,0,0,1,3,Mr. William Henry Tornquist
+1,41,0,1,19.5,1,2,Mrs. (Elizabeth Anne Maidment) Mellinger
+0,37,0,1,29.7,0,1,Mr. Charles H Natsch
+1,33,0,0,7.75,1,3,Miss. Hanora Healy
+1,63,1,0,77.9583,1,1,Miss. Kornelia Theodosia Andrews
+1,45,0,0,7.75,0,3,Miss. Augusta Charlotta Lindblom
+0,21,0,0,0,0,2,Mr. Francis Parkes
+0,7,4,1,29.125,0,3,Master. Eric Rice
+1,35,1,1,20.25,1,3,Mrs. Stanton (Rosa Hunt) Abbott
+0,65,0,0,7.75,0,3,Mr. Frank Duane
+0,28,0,0,7.8542,0,3,Mr. Nils Johan Goransson Olsson
+0,16,0,0,9.5,0,3,Mr. Alfons de Pelsmaeker
+0,19,0,0,8.05,1,3,Mr. Edward Arthur Dorking
+0,57,0,0,26,0,1,Mr. Richard William Smith
+0,33,0,0,8.6625,0,3,Mr. Ivan Stankovic
+0,30,0,0,9.5,1,3,Mr. Theodore de Mulder
+0,22,0,0,7.8958,0,3,Mr. Penko Naidenoff
+0,42,0,0,13,1,2,Mr. Masabumi Hosono
+1,22,0,0,7.75,1,3,Miss. Kate Connolly
+1,26,0,0,78.85,1,1,Miss. Ellen Barber
+1,19,1,0,91.0792,1,1,Mrs. Dickinson H (Helen Walton) Bishop
+0,36,0,0,12.875,0,2,Mr. Rene Jacques Levy
+1,24,0,0,8.85,0,3,Miss. Aloisia Haas
+0,24,0,0,7.8958,0,3,Mr. Ivan Mineff
+0,30,0,0,27.7208,0,1,Mr. Ervin G Lewy
+0,23.5,0,0,7.2292,0,3,Mr. Mansour Hanna
+1,2,1,2,151.55,0,1,Miss. Helen Loraine Allison
+0,47,0,0,30.5,1,1,Mr. Adolphe Saalfeld
+1,50,0,1,247.5208,1,1,Mrs. James (Helene DeLaudeniere Chaput) Baxter
+1,20,0,0,7.75,1,3,Miss. Anna Katherine Kelly
+0,24,2,0,23.25,1,3,Mr. Bernard McCoy
+0,19,0,0,0,0,3,Mr. William Cahoone Jr Johnson
+1,46,0,0,12.35,1,2,Miss. Nora A Keane
+0,28,0,0,8.05,0,3,Mr. Howard Hugh Williams
+0,0.92,1,2,151.55,1,1,Master. Hudson Trevor Allison
+1,42,0,0,110.8833,1,1,Miss. Margaret Fleming
+1,17,1,0,108.9,1,1,Mrs. Victor de Satode (Maria Josefa Perez de Soto y Vallejo) Penasco y Castellana
+0,30,1,0,24,0,2,Mr. Samuel Abelson
+1,30,0,0,56.9292,1,1,Miss. Laura Mabel Francatelli
+1,24,0,0,83.1583,1,1,Miss. Margaret Bechstein Hays
+1,18,2,2,262.375,1,1,Miss. Emily Borie Ryerson
+1,26,1,1,26,0,2,Mrs. William (Anna Sylfven) Lahtinen
+0,28,0,0,7.8958,0,3,Mr. Ignjac Hendekovic
+0,43,1,1,26.25,0,2,Mr. Benjamin Hart
+1,26,0,0,7.8542,1,3,Miss. Helmina Josefina Nilsson
+1,24,1,0,26,1,2,Mrs. Sinai (Miriam Sternin) Kantor
+0,54,0,0,14,0,2,Dr. Ernest Moraweck
+1,31,0,2,164.8667,1,1,Miss. Mary Natalie Wick
+1,40,1,1,134.5,1,1,Mrs. Frederic Oakley (Margaretta Corning Stone) Spedden
+0,22,0,0,7.25,0,3,Mr. Samuel Dennis
+0,27,0,0,7.8958,0,3,Mr. Yoto Danoff
+1,30,0,0,12.35,1,2,Miss. Hilda Mary Slayter
+1,22,1,1,29,1,2,Mrs. Albert Francis (Sylvia Mae Harbaugh) Caldwell
+0,20,8,2,69.55,0,3,Mr. George John Jr Sage
+1,36,0,0,135.6333,1,1,Miss. Marie Grice Young
+0,61,0,0,6.2375,0,3,Mr. Johan Hansen Nysveen
+1,36,0,0,13,1,2,Mrs. (Ada E Hall) Ball
+1,31,1,1,20.525,1,3,Mrs. Frank John (Emily Alice Brown) Goldsmith
+1,16,0,1,57.9792,1,1,Miss. Jean Gertrude Hippach
+1,28,2,0,23.25,1,3,Miss. Agnes McCoy
+0,45.5,0,0,28.5,0,1,Mr. Austen Partner
+0,38,0,1,153.4625,0,1,Mr. George Edward Graham
+0,16,2,0,18,0,3,Mr. Leo Edmondus Vander Planke
+1,42,1,0,133.65,1,1,Mrs. Henry William (Clara Heinsheimer) Frauenthal
+0,30,0,0,7.8958,0,3,Mr. Mitto Denkoff
+0,29,1,0,66.6,0,1,Mr. Thomas Clinton Pears
+1,41,0,0,134.5,1,1,Miss. Elizabeth Margaret Burns
+0,45,0,0,8.05,1,3,Mr. Karl Edwart Dahl
+0,45,0,0,35.5,0,1,Mr. Stephen Weart Blackwell
+0,2,1,1,26,1,2,Master. Edmond Roger Navratil
+1,24,3,2,263,1,1,Miss. Alice Elizabeth Fortune
+0,28,0,0,13,0,2,Mr. Erik Gustaf Collander
+0,25,0,0,13,0,2,Mr. Charles Frederick Waddington Sedgwick
+0,36,0,0,13,0,2,Mr. Stanley Hubert Fox
+1,24,0,0,13,1,2,Miss. Amelia Brown
+1,40,0,0,13,1,2,Miss. Marion Elsie Smith
+1,34,1,0,16.1,1,3,Mrs. Thomas Henry (Mary E Finck) Davison
+0,3,1,1,15.9,1,3,Master. William Loch Coutts
+0,42,0,0,8.6625,0,3,Mr. Jovan Dimic
+0,23,0,0,9.225,0,3,Mr. Nils Martin Odahl
+0,43,0,0,35,0,1,Mr. Fletcher Fellows Williams-Lambert
+0,15,1,1,7.2292,0,3,Mr. Tannous Elias
+0,25,1,0,17.8,0,3,Mr. Josef Arnold-Franchi
+0,23,0,0,7.225,0,3,Mr. Wazli Yousif
+0,28,0,0,9.5,0,3,Mr. Leo Peter Vanden Steen
+1,22,0,1,55,1,1,Miss. Elsie Edith Bowerman
+1,38,0,0,13,0,2,Miss. Annie Clemmer Funk
+1,22,0,0,7.8792,1,3,Miss. Mary McGovern
+1,23,0,0,7.8792,1,3,Miss. Helen Mary Mockler
+0,40,1,4,27.9,0,3,Mr. Wilhelm Skoog
+0,29,1,0,27.7208,0,2,Mr. Sebastiano del Carlo
+1,45,0,1,14.4542,0,3,Mrs. (Catherine David) Barbara
+0,35,0,0,7.05,0,3,Mr. Adola Asim
+0,27,1,0,15.5,0,3,Mr. Thomas O'Brien
+0,30,0,0,7.25,0,3,Mr. Mauritz Nils Martin Adahl
+1,60,1,0,75.25,1,1,Mrs. Frank Manley (Anna Sophia Atkinson) Warren
+1,35,0,0,7.2292,1,3,Mrs. (Mantoura Boulos) Moussa
+1,22,0,0,7.75,1,3,Miss. Annie Jermyn
+1,24,0,0,69.3,1,1,Mme. Leontine Pauline Aubart
+0,25,1,0,55.4417,1,1,Mr. George Achilles Harder
+0,18,1,0,6.4958,0,3,Mr. Jakob Alfred Wiklund
+0,19,0,0,8.05,0,3,Mr. William Thomas Beavan
+0,22,0,0,135.6333,0,1,Mr. Sante Ringhini
+1,3,3,1,21.075,0,3,Miss. Stina Viola Palsson
+1,25,1,0,82.1708,1,1,Mrs. Edgar Joseph (Leila Saks) Meyer
+1,22,0,0,7.25,1,3,Miss. Aurora Adelia Landergren
+0,27,0,2,211.5,0,1,Mr. Harry Elkins Widener
+0,20,0,0,4.0125,0,3,Mr. Tannous Betros
+0,19,0,0,7.775,0,3,Mr. Karl Gideon Gustafsson
+1,42,0,0,227.525,1,1,Miss. Rosalie Bidois
+1,1,0,2,15.7417,1,3,Miss. Maria Nakid
+0,32,0,0,7.925,0,3,Mr. Juho Tikkanen
+1,35,1,0,52,1,1,Mrs. Alexander Oskar (Mary Aline Towner) Holverson
+0,27,0,0,7.8958,0,3,Mr. Vasil Plotcharsky
+0,18,0,0,73.5,0,2,Mr. Charles Henry Davies
+0,1,5,2,46.9,0,3,Master. Sidney Leonard Goodwin
+1,36,0,0,13,1,2,Miss. Kate Buss
+0,19,0,0,7.7292,0,3,Mr. Matthew Sadlier
+1,17,0,0,12,1,2,Miss. Bertha Lehmann
+0,36,1,2,120,1,1,Mr. William Ernest Carter
+0,21,0,0,7.7958,1,3,Mr. Carl Olof Jansson
+0,28,2,0,7.925,0,3,Mr. Johan Birger Gustafsson
+1,23,1,0,113.275,1,1,Miss. Marjorie Newell
+1,24,0,2,16.7,1,3,Mrs. Hjalmar (Agnes Charlotta Bengtsson) Sandstrom
+0,22,0,0,7.7958,0,3,Mr. Erik Johansson
+1,31,0,0,7.8542,0,3,Miss. Elina Olsson
+0,46,0,0,26,0,2,Mr. Peter David McKane
+0,23,0,0,10.5,0,2,Dr. Alfred Pain
+1,28,0,0,12.65,1,2,Mrs. William H (Jessie L) Trout
+0,39,0,0,7.925,1,3,Mr. Juha Niskanen
+0,26,0,0,8.05,0,3,Mr. John Adams
+1,21,1,0,9.825,0,3,Miss. Mari Aina Jussila
+0,28,1,0,15.85,0,3,Mr. Pekka Pietari Hakkarainen
+1,20,0,0,8.6625,0,3,Miss. Marija Oreskovic
+0,34,1,0,21,0,2,Mr. Shadrach Gale
+0,51,0,0,7.75,0,3,Mr. Carl/Charles Peter Widegren
+0,3,1,1,18.75,1,2,Master. William Rowe Richards
+0,21,0,0,7.775,0,3,Mr. Hans Martin Monsen Birkeland
+1,3,3,1,25.4667,0,3,Miss. Ida Lefebre
+0,42,0,0,7.8958,0,3,Mr. Todor Sdycoff
+0,27,0,0,6.8583,0,3,Mr. Henry Hart
+1,33,1,0,90,1,1,Miss. Daisy E Minahan
+0,22,0,0,0,0,2,Mr. Alfred Fleming Cunningham
+0,44,0,0,7.925,1,3,Mr. Johan Julian Sundman
+1,32,0,0,8.05,0,3,Mrs. Thomas (Annie Louise Rowley) Meek
+1,34,1,1,32.5,1,2,Mrs. James Vivian (Lulu Thorne Christian) Drew
+1,18,0,2,13,1,2,Miss. Lyyli Karoliina Silven
+0,30,0,0,13,0,2,Mr. William John Matthews
+1,10,0,2,24.15,0,3,Miss. Catharina Van Impe
+0,21,0,0,7.7333,0,3,Mr. David Charters
+0,29,0,0,7.875,0,3,Mr. Leo Zimmerman
+1,28,1,1,14.4,0,3,Mrs. Ernst Gilbert (Anna Sigrid Maria Brogren) Danbom
+0,18,1,1,20.2125,0,3,Mr. Viktor Richard Rosblom
+0,54,0,0,7.25,0,3,Mr. Phillippe Wiseman
+1,28,1,0,26,1,2,Mrs. Charles V (Ada Maria Winfield) Clarke
+1,19,0,0,26,1,2,Miss. Kate Florence Phillips
+0,28,0,0,7.75,0,3,Mr. James Flynn
+0,32,0,0,8.05,1,3,Mr. Berk (Berk Trembisky) Pickard
+0,28,0,0,26.55,1,1,Mr. Mauritz Hakan Bjornstrom-Steffansson
+1,33,1,0,16.1,1,3,Mrs. Percival (Florence Kate White) Thorneycroft
+1,42,1,0,26,1,2,Mrs. Charles Alexander (Alice Adelaide Slow) Louch
+0,17,0,0,7.125,0,3,Mr. Nikolai Erland Kallio
+0,50,1,0,55.9,0,1,Mr. William Baird Silvey
+1,14,1,2,120,1,1,Miss. Lucile Polk Carter
+1,21,2,2,34.375,0,3,Miss. Doolina Margaret Ford
+1,24,2,3,18.75,1,2,Mrs. Sidney (Emily Hocking) Richards
+0,64,1,4,263,0,1,Mr. Mark Fortune
+0,31,0,0,10.5,0,2,Mr. Johan Henrik Johannesson Kvillner
+1,45,1,1,26.25,1,2,Mrs. Benjamin (Esther Ada Bloomfield) Hart
+0,20,0,0,9.5,0,3,Mr. Leon Hampe
+0,25,1,0,7.775,0,3,Mr. Johan Emil Petterson
+1,28,0,0,13,1,2,Ms. Encarnacion Reynaldo
+0,29,0,0,8.1125,1,3,Mr. Bernt Johannesen-Bratthammer
+0,4,0,2,81.8583,1,1,Master. Washington Dodge
+1,13,0,1,19.5,1,2,Miss. Madeleine Violet Mellinger
+0,34,0,0,26.55,1,1,Mr. Frederic Kimber Seward
+1,5,2,1,19.2583,1,3,Miss. Marie Catherine Baclini
+0,52,0,0,30.5,1,1,Major. Arthur Godfrey Peuchen
+0,36,1,2,27.75,0,2,Mr. Edwy Arthur West
+0,28,1,0,19.9667,0,3,Mr. Ingvald Olai Olsen Hagland
+0,30,0,0,27.75,0,1,Mr. Benjamin Laventall Foreman
+0,49,1,0,89.1042,1,1,Mr. Samuel L Goldenberg
+0,24,0,0,8.05,0,3,Mr. Joseph Peduzzi
+0,29,0,0,7.8958,1,3,Mr. Ivan Jalsevac
+0,65,0,0,26.55,0,1,Mr. Francis Davis Millet
+1,41,1,0,51.8625,1,1,Mrs. Frederick R (Marion) Kenyon
+1,50,0,0,10.5,1,2,Miss. Ellen Toomey
+0,17,0,0,7.75,0,3,Mr. Maurice O'Connor
+0,48,0,0,26.55,1,1,Mr. Harry Anderson
+0,34,0,0,8.05,0,3,Mr. William Morley
+0,47,0,0,38.5,0,1,Mr. Arthur H Gee
+0,48,0,0,13,0,2,Mr. Jacob Christian Milling
+0,34,0,0,8.05,0,3,Mr. Simon Maisner
+0,38,0,0,7.05,0,3,Mr. Manuel Estanslas Goncalves
+0,21,0,0,0,0,2,Mr. William Campbell
+0,56,0,0,26.55,0,1,Mr. John Montgomery Smart
+0,22,0,0,7.725,0,3,Mr. James Scanlan
+1,0.75,2,1,19.2583,1,3,Miss. Helene Barbara Baclini
+0,39,0,0,7.25,0,3,Mr. Arthur Keefe
+0,38,0,0,8.6625,0,3,Mr. Luka Cacic
+1,33,1,2,27.75,1,2,Mrs. Edwy Arthur (Ada Mary Worth) West
+1,23,0,0,13.7917,1,2,Mrs. Amin S (Marie Marthe Thuillard) Jerwan
+1,22,0,0,9.8375,0,3,Miss. Ida Sofia Strandberg
+0,40,0,0,52,0,1,Mr. George Quincy Clifford
+0,34,1,0,21,0,2,Mr. Peter Henry Renouf
+0,29,1,0,7.0458,0,3,Mr. Lewis Richard Braund
+0,22,0,0,7.5208,0,3,Mr. Nils August Karlsson
+1,2,0,1,12.2875,1,3,Miss. Hildur E Hirvonen
+0,9,5,2,46.9,0,3,Master. Harold Victor Goodwin
+0,37,0,0,0,0,2,Mr. Anthony Wood Frost
+0,50,0,0,8.05,0,3,Mr. Richard Henry Rouse
+1,63,0,0,9.5875,1,3,Mrs. (Hedwig) Turkula
+0,25,1,0,91.0792,1,1,Mr. Dickinson H Bishop
+1,8,3,1,25.4667,0,3,Miss. Jeannie Lefebre
+1,35,1,0,90,1,1,Mrs. Frederick Maxfield (Jane Anne Forby) Hoyt
+0,58,0,0,29.7,0,1,Mr. Edward Austin Kent
+0,30,0,0,8.05,0,3,Mr. Francis William Somerton
+0,9,1,1,15.9,1,3,Master. Eden Leslie Coutts
+0,19,1,0,19.9667,0,3,Mr. Konrad Mathias Reiersen Hagland
+0,21,0,0,7.25,0,3,Mr. Einar Windelov
+0,55,0,0,30.5,0,1,Mr. Harry Markland Molson
+0,71,0,0,49.5042,0,1,Mr. Ramon Artagaveytia
+0,21,0,0,8.05,0,3,Mr. Edward Roland Stanley
+0,26,0,0,14.4583,0,3,Mr. Gerious Yousseff
+1,54,1,0,78.2667,1,1,Miss. Elizabeth Mussey Eustis
+0,55,0,0,15.1,0,3,Mr. Frederick William Shellard
+1,25,1,2,151.55,0,1,Mrs. Hudson J C (Bessie Waldo Daniels) Allison
+0,24,0,0,7.7958,0,3,Mr. Olof Svensson
+0,17,0,0,8.6625,0,3,Mr. Petar Calic
+1,21,0,0,7.75,0,3,Miss. Mary Canavan
+1,21,0,0,7.6292,0,3,Miss. Bridget Mary O'Sullivan
+1,37,0,0,9.5875,0,3,Miss. Kristina Sofia Laitinen
+1,16,0,0,86.5,1,1,Miss. Roberta Maioni
+0,18,1,0,108.9,0,1,Mr. Victor de Satode Penasco y Castellana
+1,33,0,2,26,1,2,Mrs. Frederick Charles (Jane Richards) Quick
+0,37,0,0,26.55,1,1,Mr. George Bradley
+0,28,0,0,22.525,0,3,Mr. Henry Margido Olsen
+0,26,0,0,56.4958,1,3,Mr. Fang Lang
+0,29,0,0,7.75,1,3,Mr. Eugene Patrick Daly
+0,66,0,0,8.05,0,3,Mr. James Webber
+0,36,0,0,26.2875,1,1,Mr. James Robert McGough
+1,54,1,0,59.4,1,1,Mrs. Martin (Elizabeth L. Barrett) Rothschild
+0,24,0,0,7.4958,0,3,Mr. Satio Coleff
+0,47,0,0,34.0208,0,1,Mr. William Anderson Walker
+1,34,0,0,10.5,1,2,Mrs. (Amelia Milley) Lemore
+0,30,0,0,24.15,0,3,Mr. Patrick Ryan
+1,36,1,0,26,1,2,Mrs. William A (Florence Agnes Hughes) Angle
+0,32,0,0,7.8958,0,3,Mr. Stefo Pavlovic
+1,30,0,0,93.5,1,1,Miss. Anne Perreault
+0,22,0,0,7.8958,0,3,Mr. Janko Vovk
+0,35,0,0,7.225,0,3,Mr. Sarkis Lahoud
+1,44,0,1,57.9792,1,1,Mrs. Louis Albert (Ida Sophia Fischer) Hippach
+0,18,0,0,7.2292,0,3,Mr. Fared Kassem
+0,40.5,0,0,7.75,0,3,Mr. James Farrell
+1,50,0,0,10.5,1,2,Miss. Lucy Ridsdale
+0,49,0,0,221.7792,0,1,Mr. John Farthing
+0,39,0,0,7.925,0,3,Mr. Johan Werner Salonen
+0,23,2,1,11.5,0,2,Mr. Richard George Hocking
+1,2,1,1,26,1,2,Miss. Phyllis May Quick
+0,17,0,0,7.2292,0,3,Mr. Nakli Toufik
+0,17,1,1,7.2292,0,3,Mr. Joseph Jr Elias
+1,24,0,2,22.3583,1,3,Mrs. Catherine (Catherine Rizk) Peter
+1,30,0,0,8.6625,0,3,Miss. Marija Cacic
+1,7,0,2,26.25,1,2,Miss. Eva Miriam Hart
+0,45,0,0,26.55,0,1,Major. Archibald Willingham Butt
+1,30,0,0,106.425,1,1,Miss. Bertha LeRoy
+0,69,0,0,14.5,0,3,Mr. Samuel Beard Risien
+1,22,0,2,49.5,1,1,Miss. Hedwig Margaritha Frolicher
+1,36,0,2,71,1,1,Miss. Harriet R Crosby
+1,9,4,2,31.275,0,3,Miss. Ingeborg Constanzia Andersson
+1,11,4,2,31.275,0,3,Miss. Sigrid Elisabeth Andersson
+0,32,1,0,26,1,2,Mr. Edward Beane
+0,50,1,0,106.425,0,1,Mr. Walter Donald Douglas
+0,64,0,0,26,0,1,Mr. Arthur Ernest Nicholson
+1,19,1,0,26,1,2,Mrs. Edward (Ethel Clarke) Beane
+0,27,0,0,13.8625,1,2,Mr. Julian Padro y Manent
+0,33,1,1,20.525,0,3,Mr. Frank John Goldsmith
+0,8,1,1,36.75,1,2,Master. John Morgan Jr Davies
+0,17,0,2,110.8833,1,1,Mr. John Borland Jr Thayer
+0,27,0,0,26,0,2,Mr. Percival James R Sharp
+0,21,0,0,7.8292,0,3,Mr. Timothy O'Brien
+0,22,0,0,7.225,1,3,Mr. Fahim Leeni
+1,22,0,0,7.775,1,3,Miss. Velin Ohman
+0,62,0,0,26.55,0,1,Mr. George Wright
+1,48,1,0,39.6,1,1,Lady. (Lucille Christiana Sutherland)Duff Gordon
+0,45,0,0,227.525,0,1,Mr. Victor Robbins
+1,39,1,1,79.65,1,1,Mrs. Emil (Tillie Mandelbaum) Taussig
+1,36,1,0,17.4,1,3,Mrs. Guillaume Joseph (Emma) de Messemaeker
+0,30,0,0,7.75,0,3,Mr. Thomas Rowan Morrow
+0,40,0,0,7.8958,0,3,Mr. Husein Sivic
+0,28,0,0,13.5,0,2,Mr. Robert Douglas Norman
+0,40,0,0,8.05,0,3,Mr. John Simmons
+1,62,0,0,8.05,0,3,Miss. (Marion Ogden) Meanwell
+0,24,2,0,24.15,0,3,Mr. Alfred J Davies
+0,19,0,0,7.8958,0,3,Mr. Ilia Stoytcheff
+1,29,0,4,21.075,0,3,Mrs. Nils (Alma Cornelia Berglund) Palsson
+0,28,0,0,7.2292,0,3,Mr. Tannous Doharr
+0,32,0,0,7.8542,1,3,Mr. Carl Jonsson
+0,62,0,0,10.5,1,2,Mr. George Harris
+1,53,2,0,51.4792,1,1,Mrs. Edward Dale (Charlotte Lamson) Appleton
+0,36,0,0,26.3875,1,1,Mr. John Irwin Flynn
+1,22,0,0,7.75,1,3,Miss. Mary Kelly
+0,16,0,0,8.05,0,3,Mr. Alfred George John Rush
+0,19,0,0,14.5,0,3,Mr. George Patchett
+1,34,0,0,13,1,2,Miss. Ethel Garside
+1,39,1,0,55.9,1,1,Mrs. William Baird (Alice Munger) Silvey
+1,18,1,0,14.4583,0,3,Mrs. Joseph (Maria Elias) Caram
+0,32,0,0,7.925,1,3,Mr. Eiriik Jussila
+1,25,1,1,30,1,2,Miss. Julie Rachel Christy
+1,39,1,1,110.8833,1,1,Mrs. John Borland (Marian Longstreth Morris) Thayer
+0,54,0,0,26,0,2,Mr. William James Downton
+0,36,0,0,40.125,0,1,Mr. John Hugo Ross
+0,16,0,0,8.7125,0,3,Mr. Uscher Paulner
+1,18,0,2,79.65,1,1,Miss. Ruth Taussig
+0,47,0,0,15,0,2,Mr. John Denzil Jarvis
+0,60,1,1,79.2,1,1,Mr. Maxmillian Frolicher-Stehli
+0,22,0,0,8.05,0,3,Mr. Eliezer Gilinski
+0,22,0,0,8.05,0,3,Mr. Joseph Murdlin
+0,35,0,0,7.125,0,3,Mr. Matti Rintamaki
+1,52,1,0,78.2667,1,1,Mrs. Walter Bertram (Martha Eustis) Stephenson
+0,47,0,0,7.25,0,3,Mr. William James Elsbury
+1,40,0,2,7.75,0,3,Miss. Mary Bourke
+0,37,1,0,26,0,2,Mr. John Henry Chapman
+0,36,1,1,24.15,0,3,Mr. Jean Baptiste Van Impe
+1,31,0,0,33,1,2,Miss. Jessie Wills Leitch
+0,49,0,0,0,0,3,Mr. Alfred Johnson
+0,18,0,0,7.225,0,3,Mr. Hanna Boulos
+0,49,1,0,56.9292,1,1,Sir. Cosmo Edmund Duff Gordon
+1,24,2,1,27,1,2,Mrs. Sidney Samuel (Amy Frances Christy) Jacobsohn
+0,42,0,0,7.8958,0,3,Mr. Petco Slabenoff
+0,37,0,0,42.4,0,1,Mr. Charles H Harrington
+0,44,0,0,8.05,0,3,Mr. Ernst William Torber
+0,35,0,0,26.55,1,1,Mr. Harry Homer
+0,36,1,0,15.55,0,3,Mr. Edvard Bengtsson Lindell
+0,30,0,0,7.8958,0,3,Mr. Milan Karaic
+0,27,0,0,30.5,1,1,Mr. Robert Williams Daniel
+1,22,1,2,41.5792,1,2,Mrs. Joseph (Juliette Marie Louise Lafargue) Laroche
+1,40,0,0,153.4625,1,1,Miss. Elizabeth W Shutes
+1,39,1,5,31.275,0,3,Mrs. Anders Johan (Alfrida Konstantia Brogren) Andersson
+0,21,0,0,7.05,0,3,Mr. Jose Neto Jardin
+1,18,1,0,15.5,1,3,Miss. Margaret Jane Murphy
+0,22,0,0,7.75,0,3,Mr. John Horgan
+0,35,0,0,8.05,0,3,Mr. William Alfred Brocklebank
+1,24,1,2,65,1,2,Miss. Alice Herman
+0,34,1,1,14.4,0,3,Mr. Ernst Gilbert Danbom
+1,26,1,0,16.1,0,3,Mrs. William Arthur (Cordelia K Stanlick) Lobb
+1,4,2,1,39,1,2,Miss. Marion Louise Becker
+0,26,0,0,10.5,0,2,Mr. Lawrence Gavey
+0,27,1,0,14.4542,0,3,Mr. Antoni Yasbeck
+0,42,1,0,52.5542,1,1,Mr. Edwin Nelson Jr Kimball
+0,20,1,1,15.7417,1,3,Mr. Sahid Nakid
+0,21,0,0,7.8542,0,3,Mr. Henry Damsgaard Hansen
+0,21,0,0,16.1,0,3,Mr. David John Bowen
+0,61,0,0,32.3208,0,1,Mr. Frederick Sutton
+0,57,0,0,12.35,0,2,Rev. Charles Leonard Kirkland
+1,21,0,0,77.9583,1,1,Miss. Gretchen Fiske Longley
+0,26,0,0,7.8958,0,3,Mr. Guentcho Bostandyeff
+0,18,0,0,7.7333,0,3,Mr. Patrick D O'Connell
+0,80,0,0,30,1,1,Mr. Algernon Henry Wilson Barkworth
+0,51,0,0,7.0542,0,3,Mr. Johan Svensson Lundahl
+0,32,0,0,30.5,1,1,Dr. Max Stahelin-Maeglin
+0,30,0,0,0,0,1,Mr. William Henry Marsh Parr
+1,9,3,2,27.9,0,3,Miss. Mabel Skoog
+1,28,0,0,13,1,2,Miss. Mary Davis
+0,32,0,0,7.925,0,3,Mr. Antti Gustaf Leinonen
+0,31,1,1,26.25,0,2,Mr. Harvey Collyer
+1,41,0,5,39.6875,0,3,Mrs. Juha (Maria Emilia Ojala) Panula
+0,37,1,0,16.1,0,3,Mr. Percival Thorneycroft
+0,20,0,0,7.8542,0,3,Mr. Hans Peder Jensen
+1,24,0,0,69.3,1,1,Mlle. Emma Sagesser
+1,2,3,2,27.9,0,3,Miss. Margit Elizabeth Skoog
+0,32,0,0,56.4958,1,3,Mr. Choong Foo
+1,0.75,2,1,19.2583,1,3,Miss. Eugenie Baclini
+0,48,1,0,76.7292,1,1,Mr. Henry Sleeper Harper
+0,19,0,0,7.8958,0,3,Mr. Liudevit Cor
+0,56,0,0,35.5,1,1,Col. Oberst Alfons Simonius-Blumer
+0,21,0,0,7.55,0,3,Mr. Edward Willey
+1,23,0,0,7.55,1,3,Miss. Amy Zillah Elsie Stanley
+0,23,0,0,7.8958,0,3,Mr. Mito Mitkoff
+1,18,0,1,23,1,2,Miss. Elsie Doling
+0,21,0,0,8.4333,0,3,Mr. Johannes Halvorsen Kalvik
+1,16,0,0,7.8292,1,3,Miss. Hanora O'Leary
+1,18,0,0,6.75,0,3,Miss. Hanora Hegarty
+0,24,2,0,73.5,0,2,Mr. Leonard Mark Hickman
+0,27,0,0,7.8958,0,3,Mr. Alexander Radeff
+1,32,1,1,15.5,0,3,Mrs. John (Catherine) Bourke
+0,23,0,0,13,0,2,Mr. George Floyd Eitemiller
+0,58,0,2,113.275,0,1,Mr. Arthur Webster Newell
+0,50,2,0,133.65,1,1,Dr. Henry William Frauenthal
+0,40,0,0,7.225,0,3,Mr. Mohamed Badt
+0,47,0,0,25.5875,0,1,Mr. Edward Pomeroy Colley
+0,36,0,0,7.4958,0,3,Mr. Peju Coleff
+0,20,1,0,7.925,1,3,Mr. Eino William Lindqvist
+0,32,2,0,73.5,0,2,Mr. Lewis Hickman
+0,25,0,0,13,0,2,Mr. Reginald Fenton Butler
+0,49,0,0,7.775,0,3,Mr. Knud Paust Rommetvedt
+0,43,0,0,8.05,0,3,Mr. Jacob Cook
+1,48,1,0,52,1,1,Mrs. Elmer Zebley (Juliet Cummins Wright) Taylor
+1,40,1,1,39,1,2,Mrs. Thomas William Solomon (Elizabeth Catherine Ford) Brown
+0,31,1,0,52,0,1,Mr. Thornton Davidson
+0,70,0,0,10.5,0,2,Mr. Henry Michael Mitchell
+0,31,0,0,13,1,2,Mr. Charles Wilhelms
+0,19,0,0,0,0,2,Mr. Ennis Hastings Watson
+0,18,0,0,7.775,0,3,Mr. Gustaf Hjalmar Edvardsson
+0,24.5,0,0,8.05,0,3,Mr. Frederick Charles Sawyer
+1,18,0,0,9.8417,1,3,Miss. Anna Sofia Turja
+1,43,1,6,46.9,0,3,Mrs. Frederick (Augusta Tyler) Goodwin
+0,36,0,1,512.3292,1,1,Mr. Thomas Drake Martinez Cardeza
+1,28,0,0,8.1375,0,3,Miss. Katie Peters
+0,27,0,0,76.7292,1,1,Mr. Hammad Hassab
+0,20,0,0,9.225,0,3,Mr. Thor Anderson Olsvigen
+0,14,5,2,46.9,0,3,Mr. Charles Edward Goodwin
+0,60,1,1,39,0,2,Mr. Thomas William Solomon Brown
+0,25,1,2,41.5792,0,2,Mr. Joseph Philippe Lemercier Laroche
+0,14,4,1,39.6875,0,3,Mr. Jaako Arnold Panula
+0,19,0,0,10.1708,0,3,Mr. Branko Dakic
+0,18,0,0,7.7958,0,3,Mr. Eberhard Thelander Fischer
+1,15,0,1,211.3375,1,1,Miss. Georgette Alexandra Madill
+0,31,1,0,57,1,1,Mr. Albert Adrian Dick
+1,4,0,1,13.4167,1,3,Miss. Manca Karun
+0,37,0,0,56.4958,1,3,Mr. Ali Lam
+0,25,0,0,7.225,0,3,Mr. Khalil Saad
+0,60,0,0,26.55,0,1,Col. John Weir
+0,52,0,0,13.5,0,2,Mr. Charles Henry Chapman
+0,44,0,0,8.05,0,3,Mr. James Kelly
+1,19,0,0,7.7333,1,3,Miss. Katherine Mullens
+0,49,1,1,110.8833,0,1,Mr. John Borland Thayer
+0,42,0,0,7.65,0,3,Mr. Adolf Mathias Nicolai Olsen Humblen
+1,18,1,0,227.525,1,1,Mrs. John Jacob (Madeleine Talmadge Force) Astor
+0,35,0,0,26.2875,1,1,Mr. Spencer Victor Silverthorne
+1,18,0,1,14.4542,0,3,Miss. Saiide Barbara
+0,25,0,0,7.7417,0,3,Mr. Martin Gallagher
+0,26,1,0,7.8542,0,3,Mr. Henrik Juul Hansen
+0,39,0,0,26,0,2,Mr. Henry Samuel Morley
+1,45,0,0,13.5,1,2,Mrs. Florence Kelly
+0,42,0,0,26.2875,1,1,Mr. Edward Pennington Calderhead
+1,22,0,0,151.55,1,1,Miss. Alice Cleaver
+0,4,1,1,15.2458,1,3,Master. Halim Gonios Moubarek
+1,24,0,0,49.5042,1,1,Mlle. Berthe Antonine Mayne
+0,41,0,0,26.55,0,1,Mr. Herman Klaber
+0,48,1,0,52,1,1,Mr. Elmer Zebley Taylor
+0,29,0,0,9.4833,0,3,Mr. August Viktor Larsson
+0,52,0,0,13,0,2,Mr. Samuel Greenberg
+0,19,0,0,7.65,0,3,Mr. Peter Andreas Lauritz Andersen Soholt
+1,38,0,0,227.525,1,1,Miss. Caroline Louise Endres
+1,27,0,0,10.5,1,2,Miss. Edwina Celia Troutt
+0,33,0,0,7.775,0,3,Mr. Malkolm Joackim Johnson
+1,6,0,1,33,1,2,Miss. Annie Jessie Harper
+0,17,1,0,7.0542,0,3,Mr. Svend Lauritz Jensen
+0,34,0,0,13,0,2,Mr. William Henry Gillespie
+0,50,0,0,13,0,2,Mr. Henry Price Hodges
+0,27,1,0,53.1,1,1,Mr. Norman Campbell Chambers
+0,20,0,0,8.6625,0,3,Mr. Luka Oreskovic
+1,30,3,0,21,1,2,Mrs. Peter Henry (Lillian Jefferys) Renouf
+1,28,0,0,7.7375,1,3,Miss. Margareth Mannion
+0,25,1,0,26,0,2,Mr. Kurt Arnold Gottfrid Bryhl
+1,25,1,0,7.925,0,3,Miss. Pieta Sofia Ilmakangas
+1,29,0,0,211.3375,1,1,Miss. Elisabeth Walton Allen
+0,11,0,0,18.7875,0,3,Mr. Houssein G N Hassan
+0,41,0,0,0,0,2,Mr. Robert J Knight
+0,23,0,0,13,0,2,Mr. William John Berriman
+0,23,0,0,13,0,2,Mr. Moses Aaron Troupiansky
+0,28.5,0,0,16.1,0,3,Mr. Leslie Williams
+1,48,1,3,34.375,0,3,Mrs. Edward (Margaret Ann Watson) Ford
+0,35,0,0,512.3292,1,1,Mr. Gustave J Lesurer
+0,20,0,0,7.8958,0,3,Mr. Kanio Ivanoff
+0,32,0,0,7.8958,0,3,Mr. Minko Nankoff
+0,45,0,0,30,1,1,Mr. Walter James Hawksford
+0,36,1,0,78.85,0,1,Mr. Tyrell William Cavendish
+1,21,2,2,262.375,1,1,Miss. Susan Parker Ryerson
+0,24,1,0,16.1,0,3,Mr. Neal McNamee
+0,31,0,0,7.925,1,3,Mr. Juho Stranden
+0,70,1,1,71,0,1,Capt. Edward Gifford Crosby
+0,16,1,1,20.25,0,3,Mr. Rossmore Edward Abbott
+1,30,0,0,13,1,2,Miss. Anna Sinkkonen
+0,19,1,0,53.1,0,1,Mr. Daniel Warner Marvin
+0,31,0,0,7.75,0,3,Mr. Michael Connaghton
+1,4,1,1,23,1,2,Miss. Joan Wells
+0,6,0,1,12.475,1,3,Master. Meier Moor
+0,33,0,0,9.5,0,3,Mr. Johannes Joseph Vande Velde
+0,23,0,0,7.8958,0,3,Mr. Lalio Jonkoff
+1,48,1,2,65,1,2,Mrs. Samuel (Jane Laver) Herman
+0,0.67,1,1,14.5,1,2,Master. Viljo Hamalainen
+0,28,0,0,7.7958,0,3,Mr. August Sigfrid Carlsson
+0,18,0,0,11.5,0,2,Mr. Percy Andrew Bailey
+0,34,0,0,8.05,0,3,Mr. Thomas Leonard Theobald
+1,33,0,0,86.5,1,1,the Countess. of (Lucy Noel Martha Dyer-Edwards) Rothes
+0,23,0,0,14.5,0,3,Mr. John Garfirth
+0,41,0,0,7.125,0,3,Mr. Iisakki Antino Aijo Nirva
+0,20,0,0,7.2292,1,3,Mr. Hanna Assi Barah
+1,36,1,2,120,1,1,Mrs. William Ernest (Lucile Polk) Carter
+0,16,0,0,7.775,0,3,Mr. Hans Linus Eklund
+1,51,1,0,77.9583,1,1,Mrs. John C (Anna Andrews) Hogeboom
+0,46,0,0,39.6,0,1,Dr. Arthur Jackson Brewe
+1,30.5,0,0,7.75,0,3,Miss. Mary Mangan
+0,28,1,0,24.15,0,3,Mr. Daniel J Moran
+0,32,0,0,8.3625,0,3,Mr. Daniel Danielsen Gronnestad
+0,24,0,0,9.5,0,3,Mr. Rene Aime Lievens
+0,48,0,0,7.8542,0,3,Mr. Niels Peder Jensen
+1,57,0,0,10.5,0,2,Mrs. (Mary) Mack
+0,29,0,0,7.225,0,3,Mr. Dibo Elias
+1,54,1,3,23,1,2,Mrs. Elizabeth (Eliza Needs) Hocking
+0,18,0,0,7.75,0,3,Mr. Pehr Fabian Oliver Malkolm Myhrman
+0,20,0,0,7.75,0,3,Mr. Roger Tobin
+1,5,0,0,12.475,1,3,Miss. Virginia Ethel Emanuel
+0,22,0,0,7.7375,0,3,Mr. Thomas J Kilgannon
+1,43,0,1,211.3375,1,1,Mrs. Edward Scott (Elisabeth Walton McMillan) Robert
+1,13,0,0,7.2292,1,3,Miss. Banoura Ayoub
+1,17,1,0,57,1,1,Mrs. Albert Adrian (Vera Gillespie) Dick
+0,29,0,0,30,0,1,Mr. Milton Clyde Long
+0,35,1,2,23.45,0,3,Mr. Andrew G Johnston
+0,25,0,0,7.05,0,3,Mr. William Ali
+0,25,0,0,7.25,0,3,Mr. Abraham (David Lishin) Harmer
+1,18,0,0,7.4958,1,3,Miss. Anna Sofia Sjoblom
+0,8,4,1,29.125,0,3,Master. George Hugh Rice
+0,1,1,2,20.575,1,3,Master. Bertram Vere Dean
+0,46,0,0,79.2,0,1,Mr. Benjamin Guggenheim
+0,20,0,0,7.75,0,3,Mr. Andrew Keane
+0,16,0,0,26,0,2,Mr. Alfred Gaskell
+1,21,8,2,69.55,0,3,Miss. Stella Anna Sage
+0,43,0,0,30.6958,0,1,Mr. William Fisher Hoyt
+0,25,0,0,7.8958,0,3,Mr. Ristiu Dantcheff
+0,39,0,0,13,0,2,Mr. Richard Otter
+1,49,0,0,25.9292,1,1,Dr. Alice (Farnham) Leader
+1,31,0,0,8.6833,1,3,Mrs. Mara Osman
+0,30,0,0,7.2292,0,3,Mr. Yousseff Ibrahim Shawah
+1,30,1,1,24.15,0,3,Mrs. Jean Baptiste (Rosalie Paula Govaert) Van Impe
+0,34,0,0,13,0,2,Mr. Martin Ponesell
+1,31,1,1,26.25,1,2,Mrs. Harvey (Charlotte Annie Tate) Collyer
+0,11,1,2,120,1,1,Master. William Thornton II Carter
+0,0.42,0,1,8.5167,1,3,Master. Assad Alexander Thomas
+0,27,0,0,6.975,1,3,Mr. Oskar Arvid Hedman
+0,31,0,0,7.775,0,3,Mr. Karl Johan Johansson
+0,39,0,0,0,0,1,Mr. Thomas Jr Andrews
+1,18,0,0,7.775,0,3,Miss. Ellen Natalia Pettersson
+0,39,0,0,13,0,2,Mr. August Meyer
+1,33,1,0,53.1,1,1,Mrs. Norman Campbell (Bertha Griggs) Chambers
+0,26,0,0,7.8875,0,3,Mr. William Alexander
+0,39,0,0,24.15,0,3,Mr. James Lester
+0,35,0,0,10.5,0,2,Mr. Richard James Slemen
+1,6,4,2,31.275,0,3,Miss. Ebba Iris Alfrida Andersson
+0,30.5,0,0,8.05,0,3,Mr. Ernest Portage Tomlin
+0,39,0,0,0,0,1,Mr. Richard Fry
+1,23,0,0,7.925,0,3,Miss. Wendla Maria Heininen
+0,31,1,1,37.0042,0,2,Mr. Albert Mallet
+0,43,0,0,6.45,0,3,Mr. John Fredrik Alexander Holm
+0,10,3,2,27.9,0,3,Master. Karl Thorsten Skoog
+1,52,1,1,93.5,1,1,Mrs. Charles Melville (Clara Jennings Gregg) Hays
+0,27,0,0,8.6625,1,3,Mr. Nikola Lulic
+0,38,0,0,0,0,1,Jonkheer. John George Reuchlin
+1,27,0,1,12.475,1,3,Mrs. (Beila) Moor
+0,2,4,1,39.6875,0,3,Master. Urho Abraham Panula
+0,36,0,0,6.95,0,3,Mr. John Flynn
+0,23,0,0,56.4958,0,3,Mr. Len Lam
+0,1,0,2,37.0042,1,2,Master. Andre Mallet
+0,19,0,0,7.75,1,3,Mr. Thomas Joseph McCormack
+1,62,0,0,80,1,1,Mrs. George Nelson (Martha Evelyn) Stone
+1,15,1,0,14.4542,1,3,Mrs. Antoni (Selini Alexander) Yasbeck
+0,0.83,1,1,18.75,1,2,Master. George Sibley Richards
+0,30,0,0,7.2292,0,3,Mr. Amin Saad
+0,23,0,0,7.8542,0,3,Mr. Albert Augustsson
+0,18,0,0,8.3,0,3,Mr. Owen George Allum
+1,39,1,1,83.1583,1,1,Miss. Sara Rebecca Compton
+0,21,0,0,8.6625,0,3,Mr. Jakob Pasic
+0,20,0,0,8.05,0,3,Mr. Maurice Sirota
+0,32,0,0,56.4958,1,3,Mr. Chang Chip
+0,29,0,0,29.7,1,1,Mr. Pierre Marechal
+0,20,0,0,7.925,0,3,Mr. Ilmari Rudolf Alhomaki
+0,16,0,0,10.5,0,2,Mr. Thomas Charles Mudd
+1,30,0,0,31,1,1,Miss. Augusta Serepeca
+0,34.5,0,0,6.4375,0,3,Mr. Peter L Lemberopolous
+0,17,0,0,8.6625,0,3,Mr. Jeso Culumovic
+0,42,0,0,7.55,0,3,Mr. Anthony Abbing
+0,18,8,2,69.55,0,3,Mr. Douglas Bullen Sage
+0,35,0,0,7.8958,0,3,Mr. Marin Markoff
+0,28,0,1,33,0,2,Rev. John Harper
+1,40,1,0,89.1042,1,1,Mrs. Samuel L (Edwiga Grabowska) Goldenberg
+0,4,4,2,31.275,0,3,Master. Sigvard Harald Elias Andersson
+0,74,0,0,7.775,0,3,Mr. Johan Svensson
+1,9,1,1,15.2458,0,3,Miss. Nourelain Boulos
+1,16,0,1,39.4,1,1,Miss. Mary Conover Lines
+1,44,1,0,26,0,2,Mrs. Ernest Courtenay (Lilian Hughes) Carter
+1,18,0,1,9.35,1,3,Mrs. Sam (Leah Rosen) Aks
+1,45,1,1,164.8667,1,1,Mrs. George Dennick (Mary Hitchcock) Wick
+0,51,0,0,26.55,1,1,Mr. Peter Denis Daly
+1,24,0,3,19.2583,1,3,Mrs. Solomon (Latifa Qurban) Baclini
+0,30,0,0,7.2292,0,3,Mr. Raihed Razi
+0,41,2,0,14.1083,0,3,Mr. Claus Peter Hansen
+0,21,1,0,11.5,0,2,Mr. Frederick Edward Giles
+1,48,0,0,25.9292,1,1,Mrs. Frederick Joel (Margaret Welles Barron) Swift
+1,14,8,2,69.55,0,3,Miss. Dorothy Edith Sage
+0,24,0,0,13,0,2,Mr. John William Gill
+1,42,0,0,13,1,2,Mrs. (Karolina) Bystrom
+1,27,1,0,13.8583,1,2,Miss. Asuncion Duran y More
+0,31,0,0,50.4958,0,1,Mr. Washington Augustus II Roebling
+0,23,0,0,9.5,0,3,Mr. Philemon van Melkebeke
+0,4,1,1,11.1333,1,3,Master. Harold Theodor Johnson
+0,26,0,0,7.8958,0,3,Mr. Cerin Balkic
+1,47,1,1,52.5542,1,1,Mrs. Richard Leonard (Sallie Monypeny) Beckwith
+0,33,0,0,5,0,1,Mr. Frans Olof Carlsson
+0,47,0,0,9,0,3,Mr. Victor Vander Cruyssen
+1,28,1,0,24,1,2,Mrs. Samuel (Hannah Wizosky) Abelson
+1,15,0,0,7.225,1,3,Miss. Adele Kiamie Najib
+0,20,0,0,9.8458,0,3,Mr. Alfred Ossian Gustafsson
+0,19,0,0,7.8958,0,3,Mr. Nedelio Petroff
+0,23,0,0,7.8958,0,3,Mr. Kristo Laleff
+1,56,0,1,83.1583,1,1,Mrs. Thomas Jr (Lily Alexenia Wilson) Potter
+1,25,0,1,26,1,2,Mrs. William (Imanita Parrish Hall) Shelley
+0,33,0,0,7.8958,0,3,Mr. Johann Markun
+1,22,0,0,10.5167,0,3,Miss. Gerda Ulrika Dahlberg
+0,28,0,0,10.5,0,2,Mr. Frederick James Banfield
+0,25,0,0,7.05,0,3,Mr. Henry Jr Sutehall
+1,39,0,5,29.125,0,3,Mrs. William (Margaret Norton) Rice
+0,27,0,0,13,0,2,Rev. Juozas Montvila
+1,19,0,0,30,1,1,Miss. Margaret Edith Graham
+1,7,1,2,23.45,0,3,Miss. Catherine Helen Johnston
+0,26,0,0,30,1,1,Mr. Karl Howell Behr
+0,32,0,0,7.75,0,3,Mr. Patrick Dooley
