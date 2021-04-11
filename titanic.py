@@ -4,6 +4,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
 from housing import stand_n, estimate
 
+comment_spacer = "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+
 
 # All the code that I've written to classify the data for the titanic (survived or died)
 def predict_survival():
@@ -20,6 +22,8 @@ def predict_survival():
     test_feats = data[num_training:, :num_features]
     test_labels = data[num_training:, num_features]
     y = y.astype('int')
+
+    print(comment_spacer + "\nPredicting survivors on the Titanic")
 
     #######################################################################
     # Naive Bayes
@@ -49,6 +53,8 @@ def spam_filter():
     y = y.astype('int')
     test_labels = test_labels.astype('int')
 
+    print(comment_spacer + "\nPredicting spam emails")
+
     #######################################################################
     # Naive Bayes
     gnb = GaussianNB()
@@ -76,6 +82,16 @@ def predict_class():
     test_labels = data[num_training:, num_feats]
     y = y.astype('int')
     test_labels = test_labels.astype('int')
+
+    print(comment_spacer + "\nPredicting passenger class on the Titanic")
+
+    #######################################################################
+    # Naive Bayes
+    gnb = GaussianNB()
+    y_pred = gnb.fit(X, y).predict(test_feats)
+    print("Number of mislabeled points out of a total %d points : %d" % (test_feats.shape[0], (test_labels != y_pred).sum()))
+    print("Naive Baye's Score: " + str(1 - (test_labels != y_pred).sum() / (test_feats.shape[0])))
+
     #######################################################################
     # Logistic Regression
     clf = LogisticRegression(max_iter=10000).fit(X, y)
@@ -84,4 +100,6 @@ def predict_class():
 
 
 if __name__ == "__main__":
-    predict_survival()
+    # predict_survival()
+    # spam_filter()
+    predict_class()

@@ -39,9 +39,6 @@ def sampler(num_steps, beta, sigma):
     num_accepts = 0
     # Activates when we're in the last 10000 steps
     is_ending = False
-    mh_s = time.time()
-    quarter_time = 0
-    half_time = 0
 
     everything = np.zeros(num_steps)
     # Iterates R&R for the specified number of steps
@@ -73,6 +70,26 @@ def sampler(num_steps, beta, sigma):
         print("The percentage of accepted moves in the last " + str(term) + " steps is " + str(accept_rate))
 
     return journey, accept_rate
+
+
+# Takes the elements of a numpy array and creates a trace plot.
+def trace_plot(matrix, title=None, save=None):
+    assert isinstance(matrix, np.ndarray)
+    aggregate = matrix
+    if matrix.ndim > 1:
+        aggregate = matrix[0, :]
+    x_ax = np.arange(0, len(aggregate))
+    plt.plot(x_ax, aggregate)
+
+    if isinstance(title, str):
+        plt.title(title)
+
+    # if we've been told to save, we'll save it to the specified directory rather than displaying it
+    if isinstance(save, str):
+        plt.savefig(save + " trace plot")
+        plt.close()
+    else:
+        plt.show()
 
 
 def histogram(input_data, sigma, show=True):
@@ -152,25 +169,39 @@ def neg_likelihood(tau):
     return - likelihood(tau)
 
 
-def show_freq_best(tau):
+# Performs a posterior predictive check if so specified
+def show_freq_best(tau, post_pred_check=None):
     fig, axs = plt.subplots(1)
     # We can set the number of bins with the `bins` kwarg
-    counts, bins, bars = axs.hist(lifetimes, bins=n_bins, zorder=1, density=True)
+    counts, bins, bars = axs.hist(lifetimes, bins=30, zorder=1, density=True)
     # Plotting the frequentist distribution
     start = 0.1
     stop = 8.0
     lin = np.linspace(start, stop)
     max_height = np.amax(counts)
-    axs.plot(lin, decay_func(lin, tau), color='r', zorder=10, alpha=1)
+    if isinstance(post_pred_check, list):
+        axs.plot(lin, decay_func(lin, tau), color='r', zorder=10, alpha=1, linestyle='-', linewidth=0.75)
+        for rand_sampled_tau in post_pred_check:
+            axs.plot(lin, decay_func(lin, rand_sampled_tau), zorder=1, alpha=0.7, linewidth=1)
+    else:
+        axs.plot(lin, decay_func(lin, tau), color='r', zorder=10, alpha=1)
     title = "Best fit from frequentist analysis"
     plt.title(title)
     plt.show()
 
 
 if __name__ == "__main__":
-    show_freq_best(calculated_tau)
-
-    opt_tau = minimize(neg_likelihood, 2.2)
-    print(opt_tau)
+    # show_freq_best(calculated_tau, [2.4])
+    #
+    # opt_tau = minimize(neg_likelihood, 2.2)
+    # print(opt_tau)
     journey, accept_rate = sampler(10 ** 6, 0.25, 1)
     counts = histogram(journey, 0.1, show=True)
+
+    # finding random taus from the distribution
+    pred_check = []
+    for i in range(10):
+        # Choosing a random element out of the journey array
+        pred_check.append(journey[int(np.random.uniform(0, len(journey)))])
+    trace_plot(journey)
+    show_freq_best(calculated_tau, post_pred_check=pred_check)
